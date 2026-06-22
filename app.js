@@ -175,9 +175,9 @@ function updateDayView(){
 
 }
 
-function openEvent(id){
-
   selectedEventId = id;
+
+function openEvent(id){
 
   const event =
 
