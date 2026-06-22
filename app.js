@@ -410,7 +410,7 @@ function increaseRecord(index){
 
 }
 
-function decreaseRecord(index){
+function deleteRecord(index){
 
   const event =
 
@@ -420,21 +420,15 @@ function decreaseRecord(index){
 
     );
 
-  const record =
+  event.days[currentDay]
 
-    event.days[currentDay]
-
-    .records[index];
-
-  if(record.count > 1){
-
-    record.count--;
-
-  }
+    .records.splice(index,1);
 
   saveData();
 
   renderRecords();
+
+  renderPokemonCandidates();
 
 }
 
