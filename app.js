@@ -458,12 +458,6 @@ function deleteRecord(index){
 
 }
 
-function deleteRecord(index){
-
-  ...
-
-}
-
 function showSummary(){
 
     const event =
