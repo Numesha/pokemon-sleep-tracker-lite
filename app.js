@@ -18,17 +18,7 @@ let selectedEventId = null;
 
 let currentDay = 1;
 
-let pokemonCandidates =
 
-  JSON.parse(
-
-    localStorage.getItem(
-
-      "pokemonCandidates"
-
-    ) || "[]"
-
-  );
 
 function saveData() {
 
@@ -203,9 +193,11 @@ function openEvent(id){
 
   currentDay = 1;
 
-  updateDayView();
+updateDayView();
 
-  renderRecords();
+renderRecords();
+
+renderPokemonCandidates();
 
 }
 
@@ -294,30 +286,6 @@ function addPokemonRecord(){
     ).value.trim();
 
 if(!name) return;
-  
-if(
-
-  !pokemonCandidates.includes(name)
-
-){
-
-  pokemonCandidates.push(name);
-
-  localStorage.setItem(
-
-    "pokemonCandidates",
-
-    JSON.stringify(
-
-      pokemonCandidates
-
-    )
-
-  );
-
-  renderPokemonCandidates();
-
-}
 
   const event =
 
@@ -347,6 +315,8 @@ if(
 
   renderRecords();
 
+renderPokemonCandidates();
+  
   document.getElementById(
 
     "pokemonName"
@@ -674,7 +644,33 @@ function renderPokemonCandidates(){
 
   area.innerHTML = "";
 
-  pokemonCandidates
+  const event =
+
+    events.find(
+
+      e => e.id === selectedEventId
+
+    );
+
+  if(!event) return;
+
+  const names = new Set();
+
+  for(let day=1; day<=7; day++){
+
+    const records =
+
+      event.days[day].records || [];
+
+    records.forEach(record => {
+
+      names.add(record.name);
+
+    });
+
+  }
+
+  [...names]
 
     .sort()
 
@@ -705,3 +701,4 @@ function renderPokemonCandidates(){
     });
 
 }
+
