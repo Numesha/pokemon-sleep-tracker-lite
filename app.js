@@ -117,8 +117,6 @@ function saveEvent() {
 
   7:{note:"",records:[]}
 
-}
-
   }
 
 });
