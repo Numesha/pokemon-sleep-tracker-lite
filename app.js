@@ -409,7 +409,33 @@ function increaseRecord(index){
   renderRecords();
 
 }
+function decreaseRecord(index){
 
+  const event =
+
+    events.find(
+
+      e => e.id === selectedEventId
+
+    );
+
+  const record =
+
+    event.days[currentDay]
+
+      .records[index];
+
+  if(record.count > 1){
+
+    record.count--;
+
+  }
+
+  saveData();
+
+  renderRecords();
+
+}
 function deleteRecord(index){
 
   const event =
