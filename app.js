@@ -782,5 +782,7 @@ function selectSession(session){
 
     `${session}回目`;
 
+  renderRecords();
+
 }
 
