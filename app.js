@@ -529,36 +529,3 @@ function showSummary(){
     ).style.display = "block";
 
 }
-
-    const summaryList =
-
-        document.getElementById("summaryList");
-
-    summaryList.innerHTML = "";
-
-    Object.entries(totals)
-
-        .sort((a,b)=>b[1]-a[1])
-
-        .forEach(([name,count])=>{
-
-            const div =
-
-                document.createElement("div");
-
-            div.textContent =
-
-                `${name} (${count})`;
-
-            summaryList.appendChild(div);
-
-        });
-
-    document.getElementById(
-
-        "summaryArea"
-
-    ).style.display = "block";
-
-}
-
