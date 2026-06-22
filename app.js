@@ -44,20 +44,25 @@ function renderEvents() {
 
     div.innerHTML = `
 
-      <h3>${event.name}</h3>
+<h3>${event.name}</h3>
 
-      <p>${event.date}</p>
+  <p>${event.date}</p>
 
-      <p>${event.note}</p>
+  <p>${event.note}</p>
 
-      <button onclick="deleteEvent(${index})">
+  <button onclick="openEvent(${event.id})">
 
-        削除
+    開く
 
-      </button>
+  </button>
 
-    `;
+  <button onclick="deleteEvent(${index})">
 
+    削除
+
+  </button>
+
+`;
     eventList.appendChild(div);
 
   });
@@ -153,3 +158,11 @@ document
   .addEventListener("click", saveEvent);
 
 renderEvents();
+
+function openEvent(id){
+
+  selectedEventId = id;
+
+  alert("イベントを開く機能は次で実装");
+
+}
