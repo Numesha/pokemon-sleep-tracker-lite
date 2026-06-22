@@ -432,26 +432,6 @@ function deleteRecord(index){
 
 }
 
-function deleteRecord(index){
-
-  const event =
-
-    events.find(
-
-      e => e.id === selectedEventId
-
-    );
-
-  event.days[currentDay]
-
-    .records.splice(index,1);
-
-  saveData();
-
-  renderRecords();
-
-}
-
 function showSummary(){
 
     const event =
