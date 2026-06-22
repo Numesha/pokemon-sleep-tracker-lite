@@ -542,9 +542,21 @@ function showSummary(){
 
     for(let day=1; day<=7; day++){
 
-        const records =
+     const records1 =
 
-            event.days[day].records || [];
+  event.days[day].records1 || [];
+
+const records2 =
+
+  event.days[day].records2 || [];
+
+const records = [
+
+  ...records1,
+
+  ...records2
+
+];
 
         records.forEach(record => {
 
@@ -726,15 +738,25 @@ function renderPokemonCandidates(){
 
   for(let day=1; day<=7; day++){
 
-    const records =
+    const records1 =
 
-      event.days[day].records || [];
+  event.days[day].records1 || [];
 
-    records.forEach(record => {
+const records2 =
 
-      names.add(record.name);
+  event.days[day].records2 || [];
 
-    });
+[
+
+  ...records1,
+
+  ...records2
+
+].forEach(record => {
+
+  names.add(record.name);
+
+});
 
   }
 
@@ -766,15 +788,27 @@ btn.onclick = () => {
 
   if(!event) return;
 
-  if(!event.days[currentDay].records){
+  const key =
 
-    event.days[currentDay].records = [];
+  currentSession === 1
 
-  }
+  ? "records1"
 
-  event.days[currentDay]
+  : "records2";
 
-    .records.push({
+if(!event.days[currentDay][key]){
+
+  event.days[currentDay][key] = [];
+
+}
+
+event.days[currentDay][key].push({
+
+  name,
+
+  count: 1
+
+});
 
       name,
 
