@@ -528,93 +528,169 @@ function deleteRecord(index){
 
 function showSummary(){
 
-    const event =
+  const event =
 
-        events.find(
+    events.find(
 
-            e => e.id === selectedEventId
+      e => e.id === selectedEventId
 
-        );
+    );
 
-    if(!event) return;
+  if(!event) return;
 
-    const totals = {};
+  const totals1 = {};
 
-    for(let day=1; day<=7; day++){
+  const totals2 = {};
 
-     const records1 =
+  const totalsAll = {};
 
-  event.days[day].records1 || [];
+  for(let day=1; day<=7; day++){
 
-const records2 =
+    const records1 =
 
-  event.days[day].records2 || [];
+      event.days[day].records1 || [];
 
-const records = [
+    const records2 =
 
-  ...records1,
+      event.days[day].records2 || [];
 
-  ...records2
+    records1.forEach(record => {
 
-];
+      totals1[record.name] =
 
-        records.forEach(record => {
+        (totals1[record.name] || 0)
 
-            if(!totals[record.name]){
+        + record.count;
 
-                totals[record.name] = 0;
+      totalsAll[record.name] =
 
-            }
+        (totalsAll[record.name] || 0)
 
-            totals[record.name] += record.count;
+        + record.count;
 
-        });
+    });
 
-    }
+    records2.forEach(record => {
 
-const summaryList =
+      totals2[record.name] =
 
-    document.getElementById("summaryList");
+        (totals2[record.name] || 0)
 
-let rank = 1;
+        + record.count;
 
-let totalCount = 0;
+      totalsAll[record.name] =
 
-Object.values(totals).forEach(v => {
+        (totalsAll[record.name] || 0)
 
-    totalCount += v;
+        + record.count;
 
-});
+    });
 
-summaryList.innerHTML =
+  }
 
-    `<div><strong>総出現数 ${totalCount}</strong></div><hr>`;
+  const summaryList =
 
-Object.entries(totals)
+    document.getElementById(
 
-    .sort((a,b)=>b[1]-a[1])
+      "summaryList"
 
-    .forEach(([name,count])=>{
+    );
+
+  summaryList.innerHTML = "";
+
+  function addRanking(title,data){
+
+    const h =
+
+      document.createElement("h4");
+
+    h.textContent = title;
+
+    summaryList.appendChild(h);
+
+    let rank = 1;
+
+    Object.entries(data)
+
+      .sort((a,b)=>b[1]-a[1])
+
+      .forEach(([name,count])=>{
 
         const div =
 
-            document.createElement("div");
+          document.createElement(
+
+            "div"
+
+          );
 
         div.textContent =
 
-            `${rank}位 ${name} ${count}`;
+          `${rank}位 ${name} ${count}`;
 
         summaryList.appendChild(div);
 
         rank++;
 
+      });
+
+    summaryList.appendChild(
+
+      document.createElement("hr")
+
+    );
+
+  }
+
+  addRanking(
+
+    "【1回目】",
+
+    totals1
+
+  );
+
+  addRanking(
+
+    "【2回目】",
+
+    totals2
+
+  );
+
+  let totalCount = 0;
+
+  Object.values(totalsAll)
+
+    .forEach(v => {
+
+      totalCount += v;
+
     });
 
-    document.getElementById(
+  const totalDiv =
 
-        "summaryArea"
+    document.createElement("div");
 
-    ).style.display = "block";
+  totalDiv.innerHTML =
+
+    `<strong>総出現数 ${totalCount}</strong>`;
+
+  summaryList.appendChild(totalDiv);
+
+  addRanking(
+
+    "【合計】",
+
+    totalsAll
+
+  );
+
+  document.getElementById(
+
+    "summaryArea"
+
+  ).style.display = "block";
 
 }
 
