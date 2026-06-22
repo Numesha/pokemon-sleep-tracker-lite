@@ -410,7 +410,7 @@ function increaseRecord(index){
 
 }
 function decreaseRecord(index){
-
+alert("decreaseRecord読込OK");
   const event =
 
     events.find(
