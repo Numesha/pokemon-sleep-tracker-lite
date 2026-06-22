@@ -157,8 +157,6 @@ document
 
 renderEvents();
 
-function openEvent(id){
-
 function updateDayView(){
 
   const event =
@@ -176,20 +174,30 @@ function updateDayView(){
     event.days[currentDay].note;
 
 }
-  
-selectedEventId = id;
 
-    const event = events.find(e => e.id === id);
+function openEvent(id){
 
-    if(!event) return;
+  selectedEventId = id;
 
-    document.getElementById("eventDetail").style.display = "block";
+  const event =
 
-    document.getElementById("detailTitle").textContent = event.name;
+    events.find(e => e.id === id);
 
-    currentDay = 1;
+  if(!event) return;
 
-    renderDay();
+  document.getElementById("eventDetail").style.display =
+
+    "block";
+
+  document.getElementById("detailTitle").textContent =
+
+    event.name;
+
+  currentDay = 1;
+
+  updateDayView();
+
+  renderRecords();
 
 }
 
