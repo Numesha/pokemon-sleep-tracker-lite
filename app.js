@@ -367,6 +367,22 @@ const records =
 
   event.days[currentDay][key] || [];
 
+alert(
+
+  "Session=" +
+
+  currentSession +
+
+  "\nKey=" +
+
+  key +
+
+  "\n件数=" +
+
+  records.length
+
+);
+  
   records.forEach((record,index)=>{
 
     const div =
