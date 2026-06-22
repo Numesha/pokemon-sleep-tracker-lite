@@ -357,31 +357,57 @@ function renderRecords(){
 
       document.createElement("div");
 
-    div.innerHTML = `
+  div.innerHTML =
 
-      ${record.name}
+  `${record.name} `;
 
-<button onclick="decreaseRecord(${index})">
+const minusBtn =
 
-    -
+  document.createElement("button");
 
-  </button>
+minusBtn.textContent = "-";
 
-  ${record.count}
+minusBtn.onclick = () => {
 
-  <button onclick="increaseRecord(${index})">
+  decreaseRecord(index);
 
-    +
+};
 
-  </button>
+div.appendChild(minusBtn);
 
-  <button onclick="deleteRecord(${index})">
+div.append(
 
-    削除
+  ` ${record.count} `
 
-  </button>
+);
 
-`;
+const plusBtn =
+
+  document.createElement("button");
+
+plusBtn.textContent = "+";
+
+plusBtn.onclick = () => {
+
+  increaseRecord(index);
+
+};
+
+div.appendChild(plusBtn);
+
+const deleteBtn =
+
+  document.createElement("button");
+
+deleteBtn.textContent = "削除";
+
+deleteBtn.onclick = () => {
+
+  deleteRecord(index);
+
+};
+
+div.appendChild(deleteBtn);
     area.appendChild(div);
 
   });
