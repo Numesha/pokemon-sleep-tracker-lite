@@ -440,9 +440,17 @@ function increaseRecord(index){
 
     );
 
-  event.days[currentDay]
+  const key =
 
-    .records[index]
+    currentSession === 1
+
+    ? "records1"
+
+    : "records2";
+
+  event.days[currentDay][key]
+
+    [index]
 
     .count++;
 
@@ -451,6 +459,7 @@ function increaseRecord(index){
   renderRecords();
 
 }
+
 function decreaseRecord(index){
 
   const event =
@@ -461,11 +470,19 @@ function decreaseRecord(index){
 
     );
 
+  const key =
+
+    currentSession === 1
+
+    ? "records1"
+
+    : "records2";
+
   const record =
 
-    event.days[currentDay]
+    event.days[currentDay][key]
 
-      .records[index];
+      [index];
 
   if(record.count > 1){
 
@@ -478,6 +495,7 @@ function decreaseRecord(index){
   renderRecords();
 
 }
+
 function deleteRecord(index){
 
   const event =
@@ -488,9 +506,17 @@ function deleteRecord(index){
 
     );
 
-  event.days[currentDay]
+  const key =
 
-    .records.splice(index,1);
+    currentSession === 1
+
+    ? "records1"
+
+    : "records2";
+
+  event.days[currentDay][key]
+
+    .splice(index,1);
 
   saveData();
 
