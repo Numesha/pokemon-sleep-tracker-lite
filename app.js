@@ -702,3 +702,4 @@ function renderPokemonCandidates(){
 
 }
 
+alert("app.js最後まで読込成功");
