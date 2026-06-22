@@ -132,7 +132,7 @@ function saveEvent() {
   }
 
 });
-alert(events.length);
+
   saveData();
 
   renderEvents();
