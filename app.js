@@ -293,6 +293,8 @@ function addPokemonRecord(){
 
     ).value.trim();
 
+if(!name) return;
+  
 if(
 
   !pokemonCandidates.includes(name)
@@ -316,8 +318,6 @@ if(
   renderPokemonCandidates();
 
 }
-  
-  if(!name) return;
 
   const event =
 
