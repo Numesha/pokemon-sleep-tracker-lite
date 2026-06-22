@@ -714,13 +714,33 @@ function renderPokemonCandidates(){
 
       btn.onclick = () => {
 
-        document.getElementById(
+  const event =
 
-          "pokemonName"
+    events.find(
 
-        ).value = name;
+      e => e.id === selectedEventId
 
-      };
+    );
+
+  if(!event) return;
+
+  event.days[currentDay]
+
+    .records.push({
+
+      name,
+
+      count: 1
+
+    });
+
+  saveData();
+
+  renderRecords();
+
+  renderPokemonCandidates();
+
+};
 
       area.appendChild(btn);
 
