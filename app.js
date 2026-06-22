@@ -474,29 +474,43 @@ function showSummary(){
 
     }
 
-    const summaryList =
+const summaryList =
 
-        document.getElementById("summaryList");
+    document.getElementById("summaryList");
 
-    summaryList.innerHTML = "";
+let rank = 1;
 
-    Object.entries(totals)
+let totalCount = 0;
 
-        .sort((a,b)=>b[1]-a[1])
+Object.values(totals).forEach(v => {
 
-        .forEach(([name,count])=>{
+    totalCount += v;
 
-            const div =
+});
 
-                document.createElement("div");
+summaryList.innerHTML =
 
-            div.textContent =
+    `<div><strong>総出現数 ${totalCount}</strong></div><hr>`;
 
-                `${name} (${count})`;
+Object.entries(totals)
 
-            summaryList.appendChild(div);
+    .sort((a,b)=>b[1]-a[1])
 
-        });
+    .forEach(([name,count])=>{
+
+        const div =
+
+            document.createElement("div");
+
+        div.textContent =
+
+            `${rank}位 ${name} ${count}`;
+
+        summaryList.appendChild(div);
+
+        rank++;
+
+    });
 
     document.getElementById(
 
