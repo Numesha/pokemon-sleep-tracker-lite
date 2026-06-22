@@ -351,12 +351,99 @@ function renderRecords(){
 
       ${record.name}
 
-      (${record.count})
+<button onclick="decreaseRecord(${index})">
 
-    `;
+    -
 
+  </button>
+
+  ${record.count}
+
+  <button onclick="increaseRecord(${index})">
+
+    +
+
+  </button>
+
+  <button onclick="deleteRecord(${index})">
+
+    削除
+
+  </button>
+
+`;
     area.appendChild(div);
 
   });
+
+}
+
+function increaseRecord(index){
+
+  const event =
+
+    events.find(
+
+      e => e.id === selectedEventId
+
+    );
+
+  event.days[currentDay]
+
+    .records[index]
+
+    .count++;
+
+  saveData();
+
+  renderRecords();
+
+}
+
+function decreaseRecord(index){
+
+  const event =
+
+    events.find(
+
+      e => e.id === selectedEventId
+
+    );
+
+  const record =
+
+    event.days[currentDay]
+
+    .records[index];
+
+  if(record.count > 1){
+
+    record.count--;
+
+  }
+
+  saveData();
+
+  renderRecords();
+
+}
+
+function deleteRecord(index){
+
+  const event =
+
+    events.find(
+
+      e => e.id === selectedEventId
+
+    );
+
+  event.days[currentDay]
+
+    .records.splice(index,1);
+
+  saveData();
+
+  renderRecords();
 
 }
