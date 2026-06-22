@@ -264,3 +264,97 @@ function updateDayView(){
     event.days[currentDay].note;
 
 }
+
+function addPokemonRecord(){
+
+  const name =
+
+    document.getElementById(
+
+      "pokemonName"
+
+    ).value.trim();
+
+  if(!name) return;
+
+  const event =
+
+    events.find(
+
+      e => e.id === selectedEventId
+
+    );
+
+  if(!event) return;
+
+  if(!event.days[currentDay].records){
+
+    event.days[currentDay].records = [];
+
+  }
+
+  event.days[currentDay].records.push({
+
+    name,
+
+    count: 1
+
+  });
+
+  saveData();
+
+  renderRecords();
+
+  document.getElementById(
+
+    "pokemonName"
+
+  ).value = "";
+
+}
+
+function renderRecords(){
+
+  const event =
+
+    events.find(
+
+      e => e.id === selectedEventId
+
+    );
+
+  if(!event) return;
+
+  const area =
+
+    document.getElementById(
+
+      "recordList"
+
+    );
+
+  area.innerHTML = "";
+
+  const records =
+
+    event.days[currentDay].records || [];
+
+  records.forEach((record,index)=>{
+
+    const div =
+
+      document.createElement("div");
+
+    div.innerHTML = `
+
+      ${record.name}
+
+      (${record.count})
+
+    `;
+
+    area.appendChild(div);
+
+  });
+
+}
