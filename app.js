@@ -18,7 +18,7 @@ let selectedEventId = null;
 
 let currentDay = 1;
 
-
+let currentSession = 1;
 
 function saveData() {
 
@@ -751,6 +751,20 @@ btn.onclick = () => {
       area.appendChild(btn);
 
     });
+
+}
+
+function selectSession(session){
+
+  currentSession = session;
+
+  document.getElementById(
+
+    "sessionLabel"
+
+  ).textContent =
+
+    `${session}回目`;
 
 }
 
