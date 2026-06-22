@@ -103,19 +103,21 @@ function saveEvent() {
 
   days: {
 
-    1:{note:""},
+1:{note:"",records:[]},
 
-    2:{note:""},
+  2:{note:"",records:[]},
 
-    3:{note:""},
+  3:{note:"",records:[]},
 
-    4:{note:""},
+  4:{note:"",records:[]},
 
-    5:{note:""},
+  5:{note:"",records:[]},
 
-    6:{note:""},
+  6:{note:"",records:[]},
 
-    7:{note:""}
+  7:{note:"",records:[]}
+
+}
 
   }
 
