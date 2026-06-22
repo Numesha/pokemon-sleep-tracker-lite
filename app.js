@@ -804,12 +804,6 @@ if(!event.days[currentDay][key]){
 
 event.days[currentDay][key].push({
 
-  name,
-
-  count: 1
-
-});
-
       name,
 
       count: 1
