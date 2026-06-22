@@ -159,6 +159,24 @@ renderEvents();
 
 function openEvent(id){
 
+function updateDayView(){
+
+  const event =
+
+    events.find(e => e.id === selectedEventId);
+
+  if(!event) return;
+
+  document.getElementById("dayLabel").textContent =
+
+    `Day${currentDay}`;
+
+  document.getElementById("dayNote").value =
+
+    event.days[currentDay].note;
+
+}
+  
 selectedEventId = id;
 
     const event = events.find(e => e.id === id);
