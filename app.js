@@ -662,17 +662,17 @@ renderPokemonCandidates();
 
 function renderPokemonCandidates(){
 
-  const list =
+  const area =
 
     document.getElementById(
 
-      "pokemonCandidates"
+      "candidateList"
 
     );
 
-  if(!list) return;
+  if(!area) return;
 
-  list.innerHTML = "";
+  area.innerHTML = "";
 
   pokemonCandidates
 
@@ -680,19 +680,28 @@ function renderPokemonCandidates(){
 
     .forEach(name => {
 
-      const option =
+      const btn =
 
         document.createElement(
 
-          "option"
+          "button"
 
         );
 
-      option.value = name;
+      btn.textContent = name;
 
-      list.appendChild(option);
+      btn.onclick = () => {
+
+        document.getElementById(
+
+          "pokemonName"
+
+        ).value = name;
+
+      };
+
+      area.appendChild(btn);
 
     });
 
 }
-
