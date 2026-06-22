@@ -175,10 +175,10 @@ function updateDayView(){
 
 }
 
-  selectedEventId = id;
-
 function openEvent(id){
 
+  selectedEventId = id;
+  
   const event =
 
     events.find(e => e.id === id);
