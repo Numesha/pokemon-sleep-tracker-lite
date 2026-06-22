@@ -712,7 +712,7 @@ function renderPokemonCandidates(){
 
       btn.textContent = name;
 
-      btn.onclick = () => {
+btn.onclick = () => {
 
   const event =
 
@@ -723,6 +723,12 @@ function renderPokemonCandidates(){
     );
 
   if(!event) return;
+
+  if(!event.days[currentDay].records){
+
+    event.days[currentDay].records = [];
+
+  }
 
   event.days[currentDay]
 
