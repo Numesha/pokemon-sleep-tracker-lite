@@ -263,6 +263,8 @@ function updateDayView(){
 
     event.days[currentDay].note;
 
+renderRecords();
+  
 }
 
 function addPokemonRecord(){
