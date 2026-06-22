@@ -117,21 +117,21 @@ function saveEvent() {
 
   days: {
 
-1:{note:"",records:[]},
+1:{note:"",records1:[],records2:[]},
 
-  2:{note:"",records:[]},
+2:{note:"",records1:[],records2:[]},
 
-  3:{note:"",records:[]},
+3:{note:"",records1:[],records2:[]},
 
-  4:{note:"",records:[]},
+4:{note:"",records1:[],records2:[]},
 
-  5:{note:"",records:[]},
+5:{note:"",records1:[],records2:[]},
 
-  6:{note:"",records:[]},
+6:{note:"",records1:[],records2:[]},
 
-  7:{note:"",records:[]}
+7:{note:"",records1:[],records2:[]}
 
-  }
+}
 
 });
 
@@ -297,19 +297,27 @@ if(!name) return;
 
   if(!event) return;
 
-  if(!event.days[currentDay].records){
+const key =
 
-    event.days[currentDay].records = [];
+  currentSession === 1
 
-  }
+  ? "records1"
 
-  event.days[currentDay].records.push({
+  : "records2";
 
-    name,
+if(!event.days[currentDay][key]){
 
-    count: 1
+  event.days[currentDay][key] = [];
 
-  });
+}
+
+event.days[currentDay][key].push({
+
+  name,
+
+  count: 1
+
+});
 
   saveData();
 
@@ -347,9 +355,17 @@ function renderRecords(){
 
   area.innerHTML = "";
 
-  const records =
+  const key =
 
-    event.days[currentDay].records || [];
+  currentSession === 1
+
+  ? "records1"
+
+  : "records2";
+
+const records =
+
+  event.days[currentDay][key] || [];
 
   records.forEach((record,index)=>{
 
