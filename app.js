@@ -181,6 +181,8 @@ document
 
 renderEvents();
 
+renderPokemonCandidates();
+
 function openEvent(id){
 
   selectedEventId = id;
