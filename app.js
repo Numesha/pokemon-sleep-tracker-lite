@@ -18,6 +18,18 @@ let selectedEventId = null;
 
 let currentDay = 1;
 
+let pokemonCandidates =
+
+  JSON.parse(
+
+    localStorage.getItem(
+
+      "pokemonCandidates"
+
+    ) || "[]"
+
+  );
+
 function saveData() {
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(events));
@@ -279,6 +291,30 @@ function addPokemonRecord(){
 
     ).value.trim();
 
+if(
+
+  !pokemonCandidates.includes(name)
+
+){
+
+  pokemonCandidates.push(name);
+
+  localStorage.setItem(
+
+    "pokemonCandidates",
+
+    JSON.stringify(
+
+      pokemonCandidates
+
+    )
+
+  );
+
+  renderPokemonCandidates();
+
+}
+  
   if(!name) return;
 
   const event =
@@ -602,6 +638,8 @@ function importData(event){
 
       renderEvents();
 
+renderPokemonCandidates();
+      
       alert("復元完了");
 
     }catch(error){
@@ -619,3 +657,40 @@ function importData(event){
   reader.readAsText(file);
 
 }
+
+function renderPokemonCandidates(){
+
+  const list =
+
+    document.getElementById(
+
+      "pokemonCandidates"
+
+    );
+
+  if(!list) return;
+
+  list.innerHTML = "";
+
+  pokemonCandidates
+
+    .sort()
+
+    .forEach(name => {
+
+      const option =
+
+        document.createElement(
+
+          "option"
+
+        );
+
+      option.value = name;
+
+      list.appendChild(option);
+
+    });
+
+}
+
