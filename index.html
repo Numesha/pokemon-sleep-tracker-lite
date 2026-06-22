@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Pokemon Sleep Tracker Lite</title>
+
+<style>
+
+body{
+
+margin:0;
+
+padding:16px;
+
+background:#f3f4f6;
+
+font-family:sans-serif;
+
+}
+
+h1{
+
+margin-top:0;
+
+}
+
+.card{
+
+background:white;
+
+padding:16px;
+
+border-radius:12px;
+
+margin-bottom:12px;
+
+}
+
+input,
+
+textarea{
+
+width:100%;
+
+box-sizing:border-box;
+
+padding:10px;
+
+margin-bottom:10px;
+
+border:1px solid #ccc;
+
+border-radius:8px;
+
+font-size:16px;
+
+}
+
+button{
+
+border:none;
+
+padding:10px 16px;
+
+border-radius:8px;
+
+font-size:16px;
+
+cursor:pointer;
+
+}
+
+.primary{
+
+background:#4caf50;
+
+color:white;
+
+}
+
+.secondary{
+
+background:#607d8b;
+
+color:white;
+
+}
+
+.event-item{
+
+padding:12px;
+
+border:1px solid #ddd;
+
+border-radius:10px;
+
+margin-top:8px;
+
+background:#fafafa;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Pokemon Sleep Tracker Lite</h1>
+
+<div class="card">
+
+<h2>イベント作成</h2>
+
+<input id="eventName" placeholder="イベント名">
+
+<input id="eventStart" type="date">
+
+<textarea id="eventNote" placeholder="イベント備考"></textarea>
+
+<button id="saveBtn" class="primary">
+
+イベント保存
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>イベント一覧</h2>
+
+<div id="eventList"></div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
