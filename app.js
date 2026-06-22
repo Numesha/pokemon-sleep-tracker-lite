@@ -192,3 +192,53 @@ selectedEventId = id;
     renderDay();
 
 }
+
+function prevDay(){
+
+  if(currentDay > 1){
+
+    currentDay--;
+
+    updateDayView();
+
+  }
+
+}
+
+function nextDay(){
+
+  if(currentDay < 7){
+
+    currentDay++;
+
+    updateDayView();
+
+  }
+
+}
+
+function saveDayNote(){
+
+  const event =
+
+    events.find(
+
+      e => e.id === selectedEventId
+
+    );
+
+  if(!event) return;
+
+  event.days[currentDay].note =
+
+    document.getElementById(
+
+      "dayNote"
+
+    ).value;
+
+  saveData();
+
+  alert("保存しました");
+
+}
