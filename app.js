@@ -93,8 +93,6 @@ function saveEvent() {
 
   events.push({
 
-
-
   id: Date.now(),
 
   name,
