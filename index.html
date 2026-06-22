@@ -138,6 +138,36 @@ background:#fafafa;
 
 <div id="eventList"></div>
 
+  <div id="eventDetail" style="display:none;">
+
+  <h2 id="detailTitle"></h2>
+
+  <div>
+
+    <button onclick="prevDay()">◀</button>
+
+    <span id="dayLabel">Day1</span>
+
+    <button onclick="nextDay()">▶</button>
+
+  </div>
+
+  <textarea
+
+    id="dayNote"
+
+    placeholder="Day備考"
+
+  ></textarea>
+
+  <button onclick="saveDayNote()">
+
+    Day保存
+
+  </button>
+
+</div>
+  
 <div id="trackerArea" style="display:none">
 
   <div class="card">
