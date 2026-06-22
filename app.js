@@ -529,3 +529,93 @@ Object.entries(totals)
     ).style.display = "block";
 
 }
+
+function exportData(){
+
+  const data = JSON.stringify(
+
+    events,
+
+    null,
+
+    2
+
+  );
+
+  const blob = new Blob(
+
+    [data],
+
+    {
+
+      type:"application/json"
+
+    }
+
+  );
+
+  const url =
+
+    URL.createObjectURL(blob);
+
+  const a =
+
+    document.createElement("a");
+
+  a.href = url;
+
+  a.download =
+
+    "pokemon-sleep-backup.json";
+
+  a.click();
+
+  URL.revokeObjectURL(url);
+
+}
+
+function importData(event){
+
+  const file =
+
+    event.target.files[0];
+
+  if(!file) return;
+
+  const reader =
+
+    new FileReader();
+
+  reader.onload = function(e){
+
+    try{
+
+      events =
+
+        JSON.parse(
+
+          e.target.result
+
+        );
+
+      saveData();
+
+      renderEvents();
+
+      alert("復元完了");
+
+    }catch(error){
+
+      alert(
+
+        "JSON読込失敗"
+
+      );
+
+    }
+
+  };
+
+  reader.readAsText(file);
+
+}
