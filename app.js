@@ -88,13 +88,35 @@ function saveEvent() {
 
   events.push({
 
-    name,
 
-    date,
 
-    note
+  id: Date.now(),
 
-  });
+  name,
+
+  date,
+
+  note,
+
+  days: {
+
+    1:{note:""},
+
+    2:{note:""},
+
+    3:{note:""},
+
+    4:{note:""},
+
+    5:{note:""},
+
+    6:{note:""},
+
+    7:{note:""}
+
+  }
+
+});
 
   saveData();
 
