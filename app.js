@@ -71,6 +71,8 @@ function renderEvents() {
 
 function saveEvent() {
 
+alert("saveEvent実行");
+  
   const name =
 
     document.getElementById("eventName").value;
