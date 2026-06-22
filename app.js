@@ -159,8 +159,18 @@ renderEvents();
 
 function openEvent(id){
 
-  selectedEventId = id;
+selectedEventId = id;
 
-  alert("イベントを開く機能は次で実装");
+    const event = events.find(e => e.id === id);
+
+    if(!event) return;
+
+    document.getElementById("eventDetail").style.display = "block";
+
+    document.getElementById("detailTitle").textContent = event.name;
+
+    currentDay = 1;
+
+    renderDay();
 
 }
