@@ -151,6 +151,8 @@ function saveEvent() {
 
 function deleteEvent(index) {
 
+createBackup();
+  
   if (!confirm("削除しますか？")) {
 
     return;
@@ -279,6 +281,8 @@ renderRecords();
 
 function addPokemonRecord(){
 
+createBackup();
+  
   const name =
 
     document.getElementById(
@@ -434,6 +438,8 @@ div.appendChild(deleteBtn);
 
 function increaseRecord(index){
 
+createBackup();
+  
   const event =
 
     events.find(
@@ -464,6 +470,8 @@ function increaseRecord(index){
 
 function decreaseRecord(index){
 
+createBackup();
+  
   const event =
 
     events.find(
@@ -925,3 +933,28 @@ function createBackup(){
   lastState = JSON.stringify(events);
 
 }
+
+function undoLastAction(){
+
+  if(!lastState){
+
+    alert("戻せるデータがありません");
+
+    return;
+
+  }
+
+  events = JSON.parse(lastState);
+
+  saveData();
+
+  renderEvents();
+
+  renderRecords();
+
+  renderPokemonCandidates();
+
+  alert("元に戻しました");
+
+}
+
