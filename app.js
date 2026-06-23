@@ -22,6 +22,16 @@ let currentSession = 1;
 
 let history = [];
 
+let favorites = JSON.parse(
+
+  localStorage.getItem(
+
+    "pokemonFavorites"
+
+  ) || "[]"
+
+);
+
 function saveData() {
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(events));
