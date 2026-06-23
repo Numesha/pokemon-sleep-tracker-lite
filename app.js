@@ -1196,43 +1196,11 @@ if(existing){
 
     "currentSearch"
 
-  )?.value || ""
+  )?.value || "";
 
 const todayTitle =
 
   document.createElement("h4");
-
-currentArea.appendChild(
-
-  favoriteTitle
-
-);
-
-favorites.forEach(name => {
-
-  if(
-
-    currentSearch &&
-
-    !name.includes(currentSearch)
-
-  ){
-
-    return;
-
-  }
-
-  createButton(
-
-    currentArea,
-
-    name,
-
-    "★"
-
-  );
-
-});
   
   document.createElement("h4");
 
