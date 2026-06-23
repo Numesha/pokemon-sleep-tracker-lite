@@ -1126,17 +1126,37 @@ area.appendChild(
 
       createBackup();
 
-      event.days[
+    const existing =
 
-        currentDay
+  event.days[
 
-      ][key].push({
+    currentDay
 
-        name,
+  ][key].find(
 
-        count:1
+    p => p.name === name
 
-      });
+  );
+
+if(existing){
+
+  existing.count++;
+
+}else{
+
+  event.days[
+
+    currentDay
+
+  ][key].push({
+
+    name,
+
+    count:1
+
+  });
+
+}
 
       saveData();
 
@@ -1496,17 +1516,37 @@ function renderFavorites(){
 
       createBackup();
 
-      event.days[
+const existing =
 
-        currentDay
+  event.days[
 
-      ][key].push({
+    currentDay
 
-        name,
+  ][key].find(
 
-        count:1
+    p => p.name === name
 
-      });
+  );
+
+if(existing){
+
+  existing.count++;
+
+}else{
+
+  event.days[
+
+    currentDay
+
+  ][key].push({
+
+    name,
+
+    count:1
+
+  });
+
+}
 
       saveData();
 
