@@ -1356,6 +1356,8 @@ document
 
   );
 
+renderFavorites();
+
 function createBackup(){
 
   history.push(
