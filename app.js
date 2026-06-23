@@ -1224,9 +1224,7 @@ Object.entries(
 
   ([name]) =>
 
-    todayPokemon[name] &&
-
-    !favorites.includes(name)
+    todayPokemon[name] 
 
 )
 
@@ -1280,9 +1278,7 @@ Object.entries(
 
   ([name]) =>
 
-    !todayPokemon[name] &&
-
-    !favorites.includes(name)
+    !todayPokemon[name] 
 
 )
 
