@@ -884,6 +884,8 @@ function renderPokemonCandidates(){
 
   const allCounts = {};
 
+const todayPokemon = {};
+  
   const currentEvent =
 
     events.find(
@@ -908,25 +910,35 @@ function renderPokemonCandidates(){
 
           .records2 || [];
 
-      [...records1,...records2]
+    [...records1,...records2]
 
-        .forEach(record => {
+  .forEach(record => {
 
-          currentCounts[
+    currentCounts[
 
-            record.name
+      record.name
 
-          ] =
+    ] =
 
-            (currentCounts[
+      (currentCounts[
 
-              record.name
+        record.name
 
-            ] || 0)
+      ] || 0)
 
-            + record.count;
+      + record.count;
 
-        });
+    if(day === currentDay){
+
+      todayPokemon[
+
+        record.name
+
+      ] = true;
+
+    }
+
+  });
 
     }
 
@@ -1186,9 +1198,31 @@ if(existing){
 
   )?.value || "";
 
+const todayTitle =
+
+  document.createElement("h4");
+
+todayTitle.textContent =
+
+  "【今日出現】";
+
+currentArea.appendChild(
+
+  todayTitle
+
+);
+
 Object.entries(
 
   currentCounts
+
+)
+
+.filter(
+
+  ([name]) =>
+
+    todayPokemon[name]
 
 )
 
@@ -1198,9 +1232,79 @@ Object.entries(
 
     b[1] - a[1]
 
-  )
+)
 
 .forEach(
+
+  ([name,count]) => {
+
+    createButton(
+
+      currentArea,
+
+      name,
+
+      count
+
+    );
+
+  }
+
+);
+
+const allTitle =
+
+  document.createElement("h4");
+
+allTitle.textContent =
+
+  "【イベント累計】";
+
+currentArea.appendChild(
+
+  allTitle
+
+);
+
+Object.entries(
+
+  currentCounts
+
+)
+
+.filter(
+
+  ([name]) =>
+
+    !todayPokemon[name]
+
+)
+
+.sort(
+
+  (a,b) =>
+
+    b[1] - a[1]
+
+)
+
+.forEach(
+
+  ([name,count]) => {
+
+    createButton(
+
+      currentArea,
+
+      name,
+
+      count
+
+    );
+
+  }
+
+);
 
   ([name,count]) => {
 
