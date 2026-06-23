@@ -866,6 +866,8 @@ const records2 =
 
 btn.onclick = () => {
 
+createBackup();
+  
   createBackup();
 
   const event =
