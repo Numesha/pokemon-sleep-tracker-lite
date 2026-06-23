@@ -994,9 +994,73 @@ function renderPokemonCandidates(){
 
       );
 
-    btn.textContent =
+  btn.textContent =
 
-      `${name} (${count})`;
+  `${name} (${count})`;
+
+const starBtn =
+
+  document.createElement(
+
+    "button"
+
+  );
+
+starBtn.textContent =
+
+  favorites.includes(name)
+
+  ? "★"
+
+  : "☆";
+
+starBtn.onclick = e => {
+
+  e.stopPropagation();
+
+  if(
+
+    favorites.includes(name)
+
+  ){
+
+    favorites =
+
+      favorites.filter(
+
+        p => p !== name
+
+      );
+
+  }else{
+
+    favorites.push(name);
+
+  }
+
+  localStorage.setItem(
+
+    "pokemonFavorites",
+
+    JSON.stringify(
+
+      favorites
+
+    )
+
+  );
+
+  renderFavorites();
+
+  renderPokemonCandidates();
+
+};
+
+area.appendChild(
+
+  starBtn
+
+);
 
     btn.onclick = () => {
 
