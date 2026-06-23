@@ -1336,6 +1336,8 @@ function undoLastAction(){
 
     renderPokemonCandidates();
 
+renderFavorites();
+    
   }
 
   alert(
@@ -1346,3 +1348,86 @@ function undoLastAction(){
 
 }
 
+function renderFavorites(){
+
+  const area =
+
+    document.getElementById(
+
+      "favoriteList"
+
+    );
+
+  if(!area) return;
+
+  area.innerHTML = "";
+
+  document.getElementById(
+
+    "favoriteTitle"
+
+  ).textContent =
+
+    `お気に入り (${favorites.length})`;
+
+  favorites.forEach(name => {
+
+    const btn =
+
+      document.createElement(
+
+        "button"
+
+      );
+
+    btn.textContent = name;
+
+    btn.onclick = () => {
+
+      const event =
+
+        events.find(
+
+          e =>
+
+            e.id ===
+
+            selectedEventId
+
+        );
+
+      if(!event) return;
+
+      const key =
+
+        currentSession === 1
+
+        ? "records1"
+
+        : "records2";
+
+      createBackup();
+
+      event.days[
+
+        currentDay
+
+      ][key].push({
+
+        name,
+
+        count:1
+
+      });
+
+      saveData();
+
+      renderRecords();
+
+    };
+
+    area.appendChild(btn);
+
+  });
+
+}
