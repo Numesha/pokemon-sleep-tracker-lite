@@ -327,13 +327,33 @@ if(!event.days[currentDay][key]){
 
 }
 
-event.days[currentDay][key].push({
+const existing =
 
-  name,
+  event.days[currentDay][key]
 
-  count: 1
+    .find(
 
-});
+      p => p.name === name
+
+    );
+
+if(existing){
+
+  existing.count++;
+
+}else{
+
+  event.days[currentDay][key]
+
+    .push({
+
+      name,
+
+      count:1
+
+    });
+
+}
 
   saveData();
 
