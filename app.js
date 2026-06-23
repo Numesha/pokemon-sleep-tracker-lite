@@ -1148,39 +1148,97 @@ Object.entries(
 
 );
 
-  Object.entries(
+  const allSearch =
 
-    allCounts
+  (
 
-  )
+    document.getElementById(
 
-  .sort(
+      "allSearch"
 
-    (a,b) =>
-
-      b[1] - a[1]
+    )?.value || ""
 
   )
 
-  .forEach(
+  .trim()
 
-    ([name,count]) => {
+  .toLowerCase();
 
-      createButton(
+Object.entries(
 
-        allArea,
+  allCounts
 
-        name,
+)
 
-        count
+.sort(
+
+  (a,b) =>
+
+    b[1] - a[1]
+
+  )
+
+.forEach(
+
+  ([name,count]) => {
+
+    const hiraName =
+
+      name.replace(
+
+        /[\u30a1-\u30f6]/g,
+
+        s => String.fromCharCode(
+
+          s.charCodeAt(0) - 0x60
+
+        )
 
       );
 
+    const hiraSearch =
+
+      allSearch.replace(
+
+        /[\u30a1-\u30f6]/g,
+
+        s => String.fromCharCode(
+
+          s.charCodeAt(0) - 0x60
+
+        )
+
+      );
+
+    if(
+
+      hiraSearch &&
+
+      !hiraName.includes(
+
+        hiraSearch
+
+      )
+
+    ){
+
+      return;
+
     }
 
-  );
+    createButton(
 
-}
+      allArea,
+
+      name,
+
+      count
+
+    );
+
+  }
+
+);
 
 function selectSession(session){
 
