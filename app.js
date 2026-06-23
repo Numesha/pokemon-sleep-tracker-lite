@@ -1138,6 +1138,38 @@ function selectSession(session){
 
 }
 
+document
+
+  .getElementById(
+
+    "currentSearch"
+
+  )
+
+  ?.addEventListener(
+
+    "input",
+
+    renderPokemonCandidates
+
+  );
+
+document
+
+  .getElementById(
+
+    "allSearch"
+
+  )
+
+  ?.addEventListener(
+
+    "input",
+
+    renderPokemonCandidates
+
+  );
+
 function createBackup(){
 
   history.push(
