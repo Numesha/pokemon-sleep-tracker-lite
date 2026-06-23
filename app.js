@@ -866,6 +866,8 @@ const records2 =
 
 btn.onclick = () => {
 
+  createBackup();
+
   const event =
 
     events.find(
