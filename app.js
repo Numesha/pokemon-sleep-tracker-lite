@@ -610,49 +610,65 @@ function showSummary(){
 
   summaryList.innerHTML = "";
 
-  function addRanking(title,data){
+function addRanking(title,data){
 
-    const h =
+  const h =
 
-      document.createElement("h4");
+    document.createElement("h4");
 
-    h.textContent = title;
+  h.textContent = title;
 
-    summaryList.appendChild(h);
+  summaryList.appendChild(h);
 
-    let rank = 1;
+  let total = 0;
 
-    Object.entries(data)
+  Object.values(data)
 
-      .sort((a,b)=>b[1]-a[1])
+    .forEach(v => {
 
-      .forEach(([name,count])=>{
+      total += v;
 
-        const div =
+    });
 
-          document.createElement(
+  let rank = 1;
 
-            "div"
+  Object.entries(data)
 
-          );
+    .sort((a,b)=>b[1]-a[1])
 
-        div.textContent =
+    .forEach(([name,count])=>{
 
-          `${rank}位 ${name} ${count}`;
+      const rate =
 
-        summaryList.appendChild(div);
+        total === 0
 
-        rank++;
+        ? 0
 
-      });
+        : ((count / total) * 100)
 
-    summaryList.appendChild(
+            .toFixed(1);
 
-      document.createElement("hr")
+      const div =
 
-    );
+        document.createElement("div");
 
-  }
+      div.textContent =
+
+        `${rank}位 ${name} ${count} (${rate}%)`;
+
+      summaryList.appendChild(div);
+
+      rank++;
+
+    });
+
+  summaryList.appendChild(
+
+    document.createElement("hr")
+
+  );
+
+}
 
   addRanking(
 
