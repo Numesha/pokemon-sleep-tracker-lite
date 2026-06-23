@@ -1198,8 +1198,6 @@ if(existing){
 
   )?.value || "";
 
-const todayTitle =
-
 const favoriteTitle =
 
   document.createElement("h4");
@@ -1207,6 +1205,42 @@ const favoriteTitle =
 favoriteTitle.textContent =
 
   "【お気に入り】";
+
+currentArea.appendChild(
+
+  favoriteTitle
+
+);
+
+favorites.forEach(name => {
+
+  if(
+
+    currentSearch &&
+
+    !name.includes(currentSearch)
+
+  ){
+
+    return;
+
+  }
+
+  createButton(
+
+    currentArea,
+
+    name,
+
+    "★"
+
+  );
+
+});
+
+const todayTitle =
+
+  document.createElement("h4");
 
 currentArea.appendChild(
 
