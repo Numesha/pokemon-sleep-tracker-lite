@@ -1064,14 +1064,6 @@ function renderPokemonCandidates(){
 
   )?.value || "";
 
-alert(
-
-  "検索文字=" +
-
-  currentSearch
-
-);
-
 Object.entries(
 
   currentCounts
