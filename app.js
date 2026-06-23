@@ -816,77 +816,37 @@ renderPokemonCandidates();
 
 function renderPokemonCandidates(){
 
-  const area =
+  const currentArea =
 
     document.getElementById(
 
-      "candidateList"
+      "currentCandidateList"
 
     );
 
-  if(!area) return;
+  const allArea =
 
-  area.innerHTML = "";
+    document.getElementById(
 
-  const event =
-
-    events.find(
-
-      e => e.id === selectedEventId
+      "allCandidateList"
 
     );
 
-  if(!event) return;
+  if(!currentArea || !allArea){
 
-  const names = new Set();
-
-  for(let day=1; day<=7; day++){
-
-    const records1 =
-
-  event.days[day].records1 || [];
-
-const records2 =
-
-  event.days[day].records2 || [];
-
-[
-
-  ...records1,
-
-  ...records2
-
-].forEach(record => {
-
-  names.add(record.name);
-
-});
+    return;
 
   }
 
-  [...names]
+  currentArea.innerHTML = "";
 
-    .sort()
+  allArea.innerHTML = "";
 
-    .forEach(name => {
+  const currentCounts = {};
 
-      const btn =
+  const allCounts = {};
 
-        document.createElement(
-
-          "button"
-
-        );
-
-      btn.textContent = name;
-
-btn.onclick = () => {
-
-createBackup();
-  
-  createBackup();
-
-  const event =
+  const currentEvent =
 
     events.find(
 
@@ -894,41 +854,271 @@ createBackup();
 
     );
 
-  if(!event) return;
+  if(currentEvent){
 
-  const key =
+    for(let day=1; day<=7; day++){
 
-  currentSession === 1
+      const records1 =
 
-  ? "records1"
+        currentEvent.days[day]
 
-  : "records2";
+          .records1 || [];
 
-if(!event.days[currentDay][key]){
+      const records2 =
 
-  event.days[currentDay][key] = [];
+        currentEvent.days[day]
 
-}
+          .records2 || [];
 
-event.days[currentDay][key].push({
+      [...records1,...records2]
 
-      name,
+        .forEach(record => {
 
-      count: 1
+          currentCounts[
 
-    });
+            record.name
 
-  saveData();
+          ] =
 
-  renderRecords();
+            (currentCounts[
 
-  renderPokemonCandidates();
+              record.name
 
-};
+            ] || 0)
 
-      area.appendChild(btn);
+            + record.count;
 
-    });
+        });
+
+    }
+
+  }
+
+  events.forEach(ev => {
+
+    for(let day=1; day<=7; day++){
+
+      const records1 =
+
+        ev.days[day]
+
+          .records1 || [];
+
+      const records2 =
+
+        ev.days[day]
+
+          .records2 || [];
+
+      [...records1,...records2]
+
+        .forEach(record => {
+
+          allCounts[
+
+            record.name
+
+          ] =
+
+            (allCounts[
+
+              record.name
+
+            ] || 0)
+
+            + record.count;
+
+        });
+
+    }
+
+  });
+
+  document.getElementById(
+
+    "currentCandidateTitle"
+
+  ).textContent =
+
+    `今回イベント候補 (${
+
+      Object.keys(
+
+        currentCounts
+
+      ).length
+
+    })`;
+
+  document.getElementById(
+
+    "allCandidateTitle"
+
+  ).textContent =
+
+    `全イベント候補 (${
+
+      Object.keys(
+
+        allCounts
+
+      ).length
+
+    })`;
+
+  function createButton(
+
+    area,
+
+    name,
+
+    count
+
+  ){
+
+    const btn =
+
+      document.createElement(
+
+        "button"
+
+      );
+
+    btn.textContent =
+
+      `${name} (${count})`;
+
+    btn.onclick = () => {
+
+      const event =
+
+        events.find(
+
+          e =>
+
+            e.id ===
+
+            selectedEventId
+
+        );
+
+      if(!event){
+
+        return;
+
+      }
+
+      const key =
+
+        currentSession === 1
+
+        ? "records1"
+
+        : "records2";
+
+      if(!event.days[
+
+        currentDay
+
+      ][key]){
+
+        event.days[
+
+          currentDay
+
+        ][key] = [];
+
+      }
+
+      createBackup();
+
+      event.days[
+
+        currentDay
+
+      ][key].push({
+
+        name,
+
+        count:1
+
+      });
+
+      saveData();
+
+      renderRecords();
+
+      renderPokemonCandidates();
+
+    };
+
+    area.appendChild(btn);
+
+  }
+
+  Object.entries(
+
+    currentCounts
+
+  )
+
+  .sort(
+
+    (a,b) =>
+
+      b[1] - a[1]
+
+  )
+
+  .forEach(
+
+    ([name,count]) => {
+
+      createButton(
+
+        currentArea,
+
+        name,
+
+        count
+
+      );
+
+    }
+
+  );
+
+  Object.entries(
+
+    allCounts
+
+  )
+
+  .sort(
+
+    (a,b) =>
+
+      b[1] - a[1]
+
+  )
+
+  .forEach(
+
+    ([name,count]) => {
+
+      createButton(
+
+        allArea,
+
+        name,
+
+        count
+
+      );
+
+    }
+
+  );
 
 }
 
