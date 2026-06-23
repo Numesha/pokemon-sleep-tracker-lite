@@ -1058,19 +1058,19 @@ function renderPokemonCandidates(){
 
   const currentSearch =
 
-  (
+  document.getElementById(
 
-    document.getElementById(
+    "currentSearch"
 
-      "currentSearch"
+  )?.value || "";
 
-    )?.value || ""
+alert(
 
-  )
+  "検索文字=" +
 
-  .trim()
+  currentSearch
 
-  .toLowerCase();
+);
 
 Object.entries(
 
