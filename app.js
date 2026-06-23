@@ -1200,6 +1200,46 @@ if(existing){
 
 const todayTitle =
 
+const favoriteTitle =
+
+  document.createElement("h4");
+
+favoriteTitle.textContent =
+
+  "【お気に入り】";
+
+currentArea.appendChild(
+
+  favoriteTitle
+
+);
+
+favorites.forEach(name => {
+
+  if(
+
+    currentSearch &&
+
+    !name.includes(currentSearch)
+
+  ){
+
+    return;
+
+  }
+
+  createButton(
+
+    currentArea,
+
+    name,
+
+    "★"
+
+  );
+
+});
+  
   document.createElement("h4");
 
 todayTitle.textContent =
