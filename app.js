@@ -1292,22 +1292,6 @@ Object.entries(
 
   ([name,count]) => {
 
-    createButton(
-
-      currentArea,
-
-      name,
-
-      count
-
-    );
-
-  }
-
-);
-
-  ([name,count]) => {
-
     const hiraName =
 
       name.replace(
