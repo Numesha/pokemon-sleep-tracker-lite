@@ -20,6 +20,8 @@ let currentDay = 1;
 
 let currentSession = 1;
 
+let lastState = null;
+
 function saveData() {
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(events));
@@ -498,6 +500,8 @@ function decreaseRecord(index){
 
 function deleteRecord(index){
 
+createBackup();
+  
   const event =
 
     events.find(
@@ -916,3 +920,8 @@ function selectSession(session){
 
 }
 
+function createBackup(){
+
+  lastState = JSON.stringify(events);
+
+}
