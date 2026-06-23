@@ -1404,6 +1404,8 @@ function undoLastAction(){
 
 renderFavorites();
     
+renderFavorites();
+    
   }
 
   alert(
