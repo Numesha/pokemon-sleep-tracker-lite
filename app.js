@@ -1196,47 +1196,7 @@ if(existing){
 
     "currentSearch"
 
-  )?.value || "";
-
-const favoriteTitle =
-
-  document.createElement("h4");
-
-favoriteTitle.textContent =
-
-  "【お気に入り】";
-
-currentArea.appendChild(
-
-  favoriteTitle
-
-);
-
-favorites.forEach(name => {
-
-  if(
-
-    currentSearch &&
-
-    !name.includes(currentSearch)
-
-  ){
-
-    return;
-
-  }
-
-  createButton(
-
-    currentArea,
-
-    name,
-
-    "★"
-
-  );
-
-});
+  )?.value || ""
 
 const todayTitle =
 
@@ -1296,7 +1256,9 @@ Object.entries(
 
   ([name]) =>
 
-    todayPokemon[name]
+    todayPokemon[name] &&
+
+    !favorites.includes(name)
 
 )
 
@@ -1350,7 +1312,9 @@ Object.entries(
 
   ([name]) =>
 
-    !todayPokemon[name]
+    !todayPokemon[name] &&
+
+    !favorites.includes(name)
 
 )
 
