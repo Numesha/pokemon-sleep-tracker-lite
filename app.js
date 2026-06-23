@@ -524,16 +524,24 @@ createBackup();
 
       [index];
 
-  if(record.count > 1){
+if(record.count > 1){
 
-    record.count--;
+  record.count--;
 
-  }
+}else{
+
+  event.days[currentDay][key]
+
+    .splice(index,1);
+
+}
 
   saveData();
 
   renderRecords();
 
+renderPokemonCandidates();
+  
 }
 
 function deleteRecord(index){
