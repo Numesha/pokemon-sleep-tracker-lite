@@ -20,7 +20,7 @@ let currentDay = 1;
 
 let currentSession = 1;
 
-let lastState = null;
+let history = [];
 
 function saveData() {
 
@@ -932,13 +932,23 @@ function selectSession(session){
 
 function createBackup(){
 
-  lastState = JSON.stringify(events);
+  history.push(
+
+    JSON.stringify(events)
+
+  );
+
+  if(history.length > 10){
+
+    history.shift();
+
+  }
 
 }
 
 function undoLastAction(){
 
-  if(!lastState){
+  if(history.length === 0){
 
     alert("戻せるデータがありません");
 
@@ -946,17 +956,31 @@ function undoLastAction(){
 
   }
 
-  events = JSON.parse(lastState);
+  const backup =
+
+    history.pop();
+
+  events =
+
+    JSON.parse(backup);
 
   saveData();
 
   renderEvents();
 
-  renderRecords();
+  if(selectedEventId){
 
-  renderPokemonCandidates();
+    renderRecords();
 
-  alert("元に戻しました");
+    renderPokemonCandidates();
+
+  }
+
+  alert(
+
+    `元に戻しました\n残り${history.length}回`
+
+  );
 
 }
 
