@@ -1240,6 +1240,8 @@ Object.entries(
 
 );
 
+}
+  
 function selectSession(session){
 
   currentSession = session;
