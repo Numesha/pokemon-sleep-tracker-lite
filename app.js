@@ -1056,37 +1056,97 @@ function renderPokemonCandidates(){
 
   }
 
-  Object.entries(
+  const currentSearch =
 
-    currentCounts
+  (
 
-  )
+    document.getElementById(
 
-  .sort(
+      "currentSearch"
 
-    (a,b) =>
-
-      b[1] - a[1]
+    )?.value || ""
 
   )
 
-  .forEach(
+  .trim()
 
-    ([name,count]) => {
+  .toLowerCase();
 
-      createButton(
+Object.entries(
 
-        currentArea,
+  currentCounts
 
-        name,
+)
 
-        count
+.sort(
+
+  (a,b) =>
+
+    b[1] - a[1]
+
+  )
+
+.forEach(
+
+  ([name,count]) => {
+
+    const hiraName =
+
+      name.replace(
+
+        /[\u30a1-\u30f6]/g,
+
+        s => String.fromCharCode(
+
+          s.charCodeAt(0) - 0x60
+
+        )
 
       );
 
+    const hiraSearch =
+
+      currentSearch.replace(
+
+        /[\u30a1-\u30f6]/g,
+
+        s => String.fromCharCode(
+
+          s.charCodeAt(0) - 0x60
+
+        )
+
+      );
+
+    if(
+
+      hiraSearch &&
+
+      !hiraName.includes(
+
+        hiraSearch
+
+      )
+
+    ){
+
+      return;
+
     }
 
-  );
+    createButton(
+
+      currentArea,
+
+      name,
+
+      count
+
+    );
+
+  }
+
+);
 
   Object.entries(
 
