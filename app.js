@@ -292,6 +292,24 @@ document
   selectedEventId = id;
 
 renderEvents();
+
+const detailArea =
+
+  document.getElementById(
+
+    "eventDetail"
+
+  );
+
+detailArea.style.display =
+
+  "block";
+
+alert(
+
+  detailArea.outerHTML.substring(0,100)
+
+);
   
   const event =
 
