@@ -160,7 +160,13 @@ if(selectedEventId){
 
   
 }
+console.log(
 
+  "events:",
+
+  events.length
+
+);
 function toggleEventList(){
 
   eventListCollapsed =
@@ -275,42 +281,10 @@ renderPokemonCandidates();
 
 function openEvent(id){
 
-document
-
-  .querySelectorAll('[id^="event-"]')
-
-  .forEach(card => {
-
-    card.style.background = "#fff";
-
-    card.style.border =
-
-      "1px solid #ddd";
-
-  });
-  
   selectedEventId = id;
 
-renderEvents();
+  renderEvents();
 
-const detailArea =
-
-  document.getElementById(
-
-    "eventDetail"
-
-  );
-
-detailArea.style.display =
-
-  "block";
-
-alert(
-
-  detailArea.outerHTML.substring(0,100)
-
-);
-  
   const event =
 
     events.find(e => e.id === id);
@@ -319,54 +293,34 @@ alert(
 
   const detailArea =
 
-  document.getElementById("eventDetail");
+    document.getElementById(
 
-if(!detailArea) return;
+      "eventDetail"
 
-detailArea.style.display =
+    );
 
-  "block";
+  if(!detailArea) return;
 
-alert("detail表示");
-  
-document.getElementById("detailTitle").textContent =
+  detailArea.style.display =
 
-  event.name;
+    "block";
 
-currentDay = 1;
+  document.getElementById(
 
-updateDayView();
+    "detailTitle"
 
-renderRecords();
+  ).textContent =
 
-renderPokemonCandidates();
+    event.name;
 
-const eventCard =
+  currentDay = 1;
 
-  document.getElementById(`event-${id}`);
+  updateDayView();
 
-if(eventCard){
+  renderRecords();
 
-  eventCard.style.background =
+  renderPokemonCandidates();
 
-    "#e8f4ff";
-
-  eventCard.style.border =
-
-    "2px solid #4da3ff";
-
-}
-  if(eventCard){
-
-  eventCard.scrollIntoView({
-
-    behavior: "smooth",
-
-    block: "start"
-
-  });
-
-}
 }
 
 function prevDay(){
