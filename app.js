@@ -156,6 +156,38 @@ if(selectedEventId){
   }
 
 }
+
+const detailArea =
+
+  document.getElementById(
+
+    "eventDetail"
+
+  );
+
+const selectedCard =
+
+  document.getElementById(
+
+    `event-${selectedEventId}`
+
+  );
+
+if(
+
+  detailArea &&
+
+  selectedCard
+
+){
+
+  selectedCard.after(
+
+    detailArea
+
+  );
+
+}
   
 }
 
@@ -288,6 +320,8 @@ document
   });
   
   selectedEventId = id;
+
+renderEvents();
   
   const event =
 
