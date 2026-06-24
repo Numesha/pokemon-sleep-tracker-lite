@@ -1,7 +1,5 @@
 const STORAGE_KEY = "pokemonSleepTrackerLite";
 
-
-};
 let events = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
 
 let selectedEventId = null;
