@@ -373,6 +373,8 @@ if(
 
 }
 
+}
+
 function prevDay(){
 
   if(currentDay > 1){
