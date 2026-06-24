@@ -195,7 +195,17 @@ if(
   );
 
 }
- 
+ if(selectedCard){
+
+  selectedCard.style.background =
+
+    "#e8f4ff";
+
+  selectedCard.style.border =
+
+    "2px solid #4da3ff";
+
+}
 }
 
 function toggleEventList(){
