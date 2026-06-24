@@ -166,6 +166,16 @@ const detailArea =
 
 alert(
 
+  document.body.innerHTML.includes(
+
+    'id="eventDetail"'
+
+  )
+
+);
+ 
+alert(
+
   "detail=" +
 
   (detailArea ? "OK" : "NG") +
