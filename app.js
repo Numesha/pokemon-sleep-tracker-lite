@@ -332,22 +332,17 @@ if(eventCard){
     "2px solid #4da3ff";
 
 }
-  
-if(detailArea && eventCard){
+  if(eventCard){
 
-  eventCard.after(detailArea);
+  eventCard.scrollIntoView({
 
-eventCard.scrollIntoView({
+    behavior: "smooth",
 
-  behavior: "smooth",
+    block: "start"
 
-  block: "start"
+  });
 
-});
-  
 }
-
-
 }
 
 function prevDay(){
