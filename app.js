@@ -235,6 +235,16 @@ function toggleEventList(){
 
   renderEvents();
 
+  if(selectedEventId){
+
+    openEvent(
+
+      selectedEventId
+
+    );
+
+  }
+
 }
 
 function saveEvent() {
