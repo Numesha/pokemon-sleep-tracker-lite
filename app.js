@@ -63,6 +63,18 @@ if(toggleBtn){
     : "イベント一覧を隠す";
 
 }
+
+if(eventListCollapsed){
+
+  eventList.style.display = "none";
+
+  return;
+
+}else{
+
+  eventList.style.display = "block";
+
+}
   
   if (!eventList) return;
 
