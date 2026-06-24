@@ -160,13 +160,7 @@ if(selectedEventId){
 
   
 }
-console.log(
 
-  "events:",
-
-  events.length
-
-);
 function toggleEventList(){
 
   eventListCollapsed =
@@ -321,6 +315,30 @@ function openEvent(id){
 
   renderPokemonCandidates();
 
+const eventCard =
+
+  document.getElementById(
+
+    `event-${id}`
+
+  );
+
+if(
+
+  eventCard &&
+
+  detailArea
+
+){
+
+  eventCard.after(
+
+    detailArea
+
+  );
+
+}
+  
 }
 
 function prevDay(){
