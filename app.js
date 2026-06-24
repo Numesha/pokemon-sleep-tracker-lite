@@ -63,14 +63,6 @@ if(toggleBtn){
     : "イベント一覧を隠す";
 
 }
-
-eventList.style.display =
-
-  eventListCollapsed
-
-  ? "none"
-
-  : "block";
   
   if (!eventList) return;
 
@@ -85,6 +77,18 @@ eventList.style.display =
   }
 
   events.forEach((event, index) => {
+
+if(
+
+  eventListCollapsed &&
+
+  event.id !== selectedEventId
+
+){
+
+  return;
+
+}
     
     const div = document.createElement("div");
 
