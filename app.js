@@ -1,6 +1,6 @@
 const STORAGE_KEY = "pokemonSleepTrackerLite";
 window.onerror = function(message, source, line){
-
+ 
   alert(
 
     "JSエラー\n" +
