@@ -198,7 +198,39 @@ if(selectedEventId){
   }
 
 }
-  
+  const detailArea =
+
+  document.getElementById(
+
+    "eventDetail"
+
+  );
+
+const selectedCard =
+
+  document.getElementById(
+
+    `event-${selectedEventId}`
+
+  );
+
+if(
+
+  detailArea &&
+
+  selectedCard &&
+
+  detailArea.style.display !== "none"
+
+){
+
+  selectedCard.after(
+
+    detailArea
+
+  );
+
+}
 }
 
 function toggleEventList(){
