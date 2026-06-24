@@ -229,6 +229,12 @@ if(selectedEventId){
 
 function toggleEventList(){
 
+  alert(
+
+    selectedEventId
+
+  );
+
   eventListCollapsed =
 
     !eventListCollapsed;
