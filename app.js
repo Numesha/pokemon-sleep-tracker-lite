@@ -325,6 +325,16 @@ alert("3");
 
     );
 
+alert(
+
+  detailArea
+
+  ? "detail OK"
+
+  : "detail NG"
+
+)
+ 
   if(!detailArea) return;
 
   detailArea.style.display =
