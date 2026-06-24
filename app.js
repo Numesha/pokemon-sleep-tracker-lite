@@ -229,15 +229,7 @@ if(selectedEventId){
 
 function toggleEventList(){
 
-  alert(
-
-    document.getElementById(
-
-      "eventDetail"
-
-    ).style.display
-
-  );
+  alert("toggle実行");
 
   eventListCollapsed =
 
