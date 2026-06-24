@@ -156,7 +156,33 @@ if(selectedEventId){
       "2px solid #4da3ff";
 
   }
+const detailArea =
 
+  document.getElementById(
+
+    "eventDetail"
+
+  );
+
+
+
+if(
+
+  detailArea &&
+
+  selectedCard &&
+
+  detailArea.style.display !== "none"
+
+){
+
+  selectedCard.after(
+
+    detailArea
+
+  );
+
+}
 }
 
 const cards =
