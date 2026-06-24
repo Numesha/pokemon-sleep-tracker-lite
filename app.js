@@ -357,16 +357,20 @@ const eventCard =
 
   );
 
-alert(
+if(
 
-  eventCard
+  eventCard &&
 
-  ? "eventCard=OK"
+  detailArea
 
-  : "eventCard=NG"
+){
 
-);
-  
+  eventCard.after(
+
+    detailArea
+
+  );
+
 }
 
 function prevDay(){
