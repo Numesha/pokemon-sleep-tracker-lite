@@ -58,6 +58,8 @@ function renderEvents() {
 
     const div = document.createElement("div");
 
+div.id = `event-${event.id}`;
+    
     div.style.border = "1px solid #ddd";
 
     div.style.padding = "10px";
@@ -220,6 +222,21 @@ updateDayView();
 renderRecords();
 
 renderPokemonCandidates();
+
+const detailArea =
+
+  document.getElementById("eventDetail");
+
+const eventCard =
+
+  document.getElementById(`event-${id}`);
+
+if(detailArea && eventCard){
+
+  eventCard.after(detailArea);
+
+}
+
 
 }
 
