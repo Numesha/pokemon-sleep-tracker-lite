@@ -70,17 +70,21 @@ function renderEvents() {
 
     div.innerHTML = `
 
-<h3>${event.name}</h3>
+<h3
+
+  onclick="openEvent(${event.id})"
+
+  style="cursor:pointer;"
+
+>
+
+  ${event.name}
+
+</h3>
 
   <p>${event.date}</p>
 
   <p>${event.note}</p>
-
-  <button onclick="openEvent(${event.id})">
-
-    開く
-
-  </button>
 
   <button onclick="deleteEvent(${index})">
 
