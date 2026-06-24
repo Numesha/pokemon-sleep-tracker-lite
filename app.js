@@ -351,19 +351,21 @@ function openEvent(id){
 
   if(
 
-    selectedCard &&
+  selectedCard &&
+
+  detailArea
+
+){
+
+  alert("after実行");
+
+  selectedCard.after(
 
     detailArea
 
-  ){
+  );
 
-    selectedCard.after(
-
-      detailArea
-
-    );
-
-  }
+}
    
 }
 
