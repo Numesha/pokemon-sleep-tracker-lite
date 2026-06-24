@@ -377,8 +377,8 @@ function openEvent(id){
 
   selectedEventId = id;
 
+  renderEvents();
 
-  
   const event =
 
     events.find(e => e.id === id);
@@ -415,56 +415,30 @@ function openEvent(id){
 
   renderPokemonCandidates();
 
-const eventCard =
+  const selectedCard =
 
-  document.getElementById(
+    document.getElementById(
 
-    `event-${id}`
+      `event-${id}`
 
-  );
+    );
 
-if(
+  if(
 
-  eventCard &&
-
-  detailArea
-
-){
-
-  eventCard.after(
+    selectedCard &&
 
     detailArea
 
-  );
+  ){
 
-}
-  
-// renderEvents();
+    selectedCard.after(
 
-const selectedCard =
+      detailArea
 
-  document.getElementById(
+    );
 
-    `event-${id}`
+  }
 
-  );
-
-if(
-
-  selectedCard &&
-
-  detailArea
-
-){
-
-  selectedCard.after(
-
-    detailArea
-
-  );
-
-}
-  
 }
 
 function prevDay(){
