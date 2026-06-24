@@ -357,21 +357,15 @@ const eventCard =
 
   );
 
-if(
+alert(
 
-  eventCard &&
+  eventCard
 
-  detailArea
+  ? "eventCard=OK"
 
-){
+  : "eventCard=NG"
 
-  eventCard.after(
-
-    detailArea
-
-  );
-
-}
+);
   
 }
 
