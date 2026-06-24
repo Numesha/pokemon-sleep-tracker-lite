@@ -147,27 +147,7 @@ function saveEvent() {
 
 };
 
-events.unshift(newEvent);
-
-  days: {
-
-1:{note:"",records1:[],records2:[]},
-
-2:{note:"",records1:[],records2:[]},
-
-3:{note:"",records1:[],records2:[]},
-
-4:{note:"",records1:[],records2:[]},
-
-5:{note:"",records1:[],records2:[]},
-
-6:{note:"",records1:[],records2:[]},
-
-7:{note:"",records1:[],records2:[]}
-
-}
-
-});
+  events.unshift(newEvent);
 
   saveData();
 
