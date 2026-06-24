@@ -164,20 +164,30 @@ const detailArea =
 
   );
 
+alert(
 
+  "detail=" +
+
+  (detailArea ? "OK" : "NG") +
+
+  "\ncard=" +
+
+  (selectedCard ? "OK" : "NG") +
+
+  "\ndisplay=" +
+
+  detailArea?.style.display
+
+);
 
 if(
 
   detailArea &&
 
-  selectedCard &&
-
-  detailArea.style.display !== "none"
+  selectedCard
 
 ){
-  
-alert("after実行");
-  
+
   selectedCard.after(
 
     detailArea
@@ -185,6 +195,8 @@ alert("after実行");
   );
 
 }
+
+
 }
 
 const cards =
