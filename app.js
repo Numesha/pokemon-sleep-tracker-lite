@@ -66,6 +66,24 @@ if(toggleBtn){
   
   if (!eventList) return;
 
+const detailArea =
+
+  document.getElementById(
+
+    "eventDetail"
+
+  );
+
+if(detailArea){
+
+  document.body.appendChild(
+
+    detailArea
+
+  );
+
+}
+  
   eventList.innerHTML = "";
 
   if (events.length === 0) {
@@ -200,12 +218,6 @@ function toggleEventList(){
     !eventListCollapsed;
 
   renderEvents();
-
-  if(selectedEventId){
-
-    openEvent(selectedEventId);
-
-  }
 
 }
 
