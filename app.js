@@ -303,6 +303,8 @@ function openEvent(id){
 
   selectedEventId = id;
 
+alert("openEvent:" + id);
+ 
  renderEvents();
 
   const event =
