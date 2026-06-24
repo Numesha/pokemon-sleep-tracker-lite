@@ -349,7 +349,29 @@ function openEvent(id){
 
   renderPokemonCandidates();
 
+const eventCard =
 
+  document.getElementById(
+
+    `event-${id}`
+
+  );
+
+if(
+
+  eventCard &&
+
+  detailArea
+
+){
+
+  eventCard.after(
+
+    detailArea
+
+  );
+
+}
   
 }
 
