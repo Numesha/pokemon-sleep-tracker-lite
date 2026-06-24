@@ -44,6 +44,28 @@ function renderEvents() {
 
   const eventList = document.getElementById("eventList");
 
+
+ alert(
+
+  "render前=" +
+
+  (
+
+    document.getElementById(
+
+      "eventDetail"
+
+    )
+
+    ? "OK"
+
+    : "NG"
+
+  )
+
+);
+
+
 const toggleBtn =
 
   document.getElementById(
@@ -70,6 +92,26 @@ if(toggleBtn){
   
   eventList.innerHTML = "";
 
+alert(
+
+  "clear後=" +
+
+  (
+
+    document.getElementById(
+
+      "eventDetail"
+
+    )
+
+    ? "OK"
+
+    : "NG"
+
+  )
+
+);
+ 
   if (events.length === 0) {
 
     eventList.innerHTML = "<p>イベントがありません</p>";
