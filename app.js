@@ -351,7 +351,19 @@ alert("openEvent:" + id);
 
     );
 
-  if(
+  alert(
+
+  "card=" +
+
+  (selectedCard ? "OK" : "NG") +
+
+  "\ndetail=" +
+
+  (detailArea ? "OK" : "NG")
+
+);
+
+if(
 
   selectedCard &&
 
