@@ -66,23 +66,7 @@ if(toggleBtn){
   
   if (!eventList) return;
 
-const detailArea =
 
-  document.getElementById(
-
-    "eventDetail"
-
-  );
-
-if(detailArea){
-
-  document.body.appendChild(
-
-    detailArea
-
-  );
-
-}
   
   eventList.innerHTML = "";
 
@@ -175,39 +159,7 @@ if(selectedEventId){
 
 }
 
-const detailArea =
 
-  document.getElementById(
-
-    "eventDetail"
-
-  );
-
-const selectedCard =
-
-  document.getElementById(
-
-    `event-${selectedEventId}`
-
-  );
-
-if(
-
-  detailArea &&
-
-  selectedCard &&
-
-  detailArea.style.display !== "none"
-
-){
-
-  selectedCard.after(
-
-    detailArea
-
-  );
-
-}
   
 }
 
@@ -357,29 +309,7 @@ function openEvent(id){
 
   renderPokemonCandidates();
 
-const eventCard =
 
-  document.getElementById(
-
-    `event-${id}`
-
-  );
-
-if(
-
-  eventCard &&
-
-  detailArea
-
-){
-
-  eventCard.after(
-
-    detailArea
-
-  );
-
-}
   
 }
 
