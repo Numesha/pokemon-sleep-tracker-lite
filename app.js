@@ -199,6 +199,20 @@ renderPokemonCandidates();
 
 function openEvent(id){
 
+document
+
+  .querySelectorAll('[id^="event-"]')
+
+  .forEach(card => {
+
+    card.style.background = "#fff";
+
+    card.style.border =
+
+      "1px solid #ddd";
+
+  });
+  
   selectedEventId = id;
   
   const event =
@@ -231,6 +245,18 @@ const eventCard =
 
   document.getElementById(`event-${id}`);
 
+if(eventCard){
+
+  eventCard.style.background =
+
+    "#e8f4ff";
+
+  eventCard.style.border =
+
+    "2px solid #4da3ff";
+
+}
+  
 if(detailArea && eventCard){
 
   eventCard.after(detailArea);
