@@ -77,8 +77,6 @@ if(toggleBtn){
   }
 
   events.forEach((event, index) => {
-
-if(eventListCollapsed)
     
     const div = document.createElement("div");
 
