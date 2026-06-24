@@ -235,6 +235,14 @@ if(detailArea && eventCard){
 
   eventCard.after(detailArea);
 
+eventCard.scrollIntoView({
+
+  behavior: "smooth",
+
+  block: "start"
+
+});
+  
 }
 
 
