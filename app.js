@@ -159,11 +159,13 @@ if(
 
   detailArea &&
 
-  selectedCard &&
-
-  detailArea.style.display === "block"
+  selectedCard
 
 ){
+
+  detailArea.style.display =
+
+    "block";
 
   selectedCard.after(
 
