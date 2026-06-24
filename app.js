@@ -44,6 +44,26 @@ function renderEvents() {
 
   const eventList = document.getElementById("eventList");
 
+const toggleBtn =
+
+  document.getElementById(
+
+    "toggleEventListBtn"
+
+  );
+
+if(toggleBtn){
+
+  toggleBtn.textContent =
+
+    eventListCollapsed
+
+    ? "イベント一覧を表示"
+
+    : "イベント一覧を隠す";
+
+}
+  
   if (!eventList) return;
 
   eventList.innerHTML = "";
@@ -58,6 +78,8 @@ function renderEvents() {
 
   events.forEach((event, index) => {
 
+if(eventListCollapsed)
+    
     const div = document.createElement("div");
 
 div.id = `event-${event.id}`;
