@@ -339,6 +339,8 @@ detailArea.style.display =
 
   "block";
 
+alert("detail表示");
+  
 document.getElementById("detailTitle").textContent =
 
   event.name;
