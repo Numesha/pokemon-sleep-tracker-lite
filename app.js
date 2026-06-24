@@ -307,12 +307,16 @@ alert("openEvent:" + id);
  
  renderEvents();
 
+alert("2");
+ 
   const event =
 
     events.find(e => e.id === id);
 
   if(!event) return;
 
+alert("3");
+ 
   const detailArea =
 
     document.getElementById(
