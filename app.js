@@ -117,7 +117,7 @@ function saveEvent() {
 
   }
 
-  events.push({
+  events.unshift({
 
   id: Date.now(),
 
