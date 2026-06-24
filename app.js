@@ -135,55 +135,7 @@ div.id = `event-${event.id}`;
 
   });
 
-if(selectedEventId){
 
-  const selectedCard =
-
-    document.getElementById(
-
-      `event-${selectedEventId}`
-
-    );
-
-  if(selectedCard){
-
-    selectedCard.style.background =
-
-      "#e8f4ff";
-
-    selectedCard.style.border =
-
-      "2px solid #4da3ff";
-
-  }
-const detailArea =
-
-  document.getElementById(
-
-    "eventDetail"
-
-  );
-
-
-
-if(
-
-  detailArea &&
-
-  selectedCard
-
-){
-
-  selectedCard.after(
-
-    detailArea
-
-  );
-
-}
-
-
-}
 
 
 
@@ -410,25 +362,7 @@ function openEvent(id){
     );
 
   }
-const selectedCard =
 
-  document.getElementById(
-
-    `event-${id}`
-
-  );
-
-if(selectedCard){
-
-  selectedCard.style.background =
-
-    "#e8f4ff";
-
-  selectedCard.style.border =
-
-    "2px solid #4da3ff";
-
-}
 }
 
 function prevDay(){
