@@ -20,6 +20,8 @@ let currentDay = 1;
 
 let currentSession = 1;
 
+let eventListCollapsed = false;
+
 let history = [];
 
 let favorites = JSON.parse(
@@ -98,6 +100,16 @@ div.id = `event-${event.id}`;
     eventList.appendChild(div);
 
   });
+
+}
+
+function toggleEventList(){
+
+  eventListCollapsed =
+
+    !eventListCollapsed;
+
+  renderEvents();
 
 }
 
