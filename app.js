@@ -311,6 +311,8 @@ function openEvent(id){
 
   selectedEventId = id;
 
+renderEvents();
+  
   const event =
 
     events.find(e => e.id === id);
@@ -371,7 +373,7 @@ if(
 
 }
   
-renderEvents();
+
   
 }
 
