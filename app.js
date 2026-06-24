@@ -374,17 +374,7 @@ function openEvent(id){
 
     );
 
-  alert(
-
-  "card=" +
-
-  (selectedCard ? "OK" : "NG") +
-
-  "\ndetail=" +
-
-  (detailArea ? "OK" : "NG")
-
-);
+  
 
 if(
 
