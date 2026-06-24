@@ -337,7 +337,7 @@ function openEvent(id){
 
   selectedEventId = id;
 
-renderEvents();
+
   
   const event =
 
@@ -399,7 +399,31 @@ if(
 
 }
   
+renderEvents();
 
+const selectedCard =
+
+  document.getElementById(
+
+    `event-${id}`
+
+  );
+
+if(
+
+  selectedCard &&
+
+  detailArea
+
+){
+
+  selectedCard.after(
+
+    detailArea
+
+  );
+
+}
   
 }
 
