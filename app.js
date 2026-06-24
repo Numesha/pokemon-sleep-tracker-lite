@@ -45,25 +45,7 @@ function renderEvents() {
   const eventList = document.getElementById("eventList");
 
 
- alert(
-
-  "render前=" +
-
-  (
-
-    document.getElementById(
-
-      "eventDetail"
-
-    )
-
-    ? "OK"
-
-    : "NG"
-
-  )
-
-);
+ 
 
 
 const toggleBtn =
@@ -88,29 +70,26 @@ if(toggleBtn){
   
   if (!eventList) return;
 
+const detailArea =
 
+  document.getElementById(
+
+    "eventDetail"
+
+  );
+
+if(detailArea){
+
+  document.body.appendChild(
+
+    detailArea
+
+  );
+
+}
   
   eventList.innerHTML = "";
 
-alert(
-
-  "clear後=" +
-
-  (
-
-    document.getElementById(
-
-      "eventDetail"
-
-    )
-
-    ? "OK"
-
-    : "NG"
-
-  )
-
-);
  
   if (events.length === 0) {
 
@@ -181,7 +160,7 @@ div.id = `event-${event.id}`;
 
 
 
-const detailArea =
+const detailArea2 =
 
   document.getElementById(
 
@@ -199,19 +178,19 @@ const selectedCard =
 
 if(
 
-  detailArea &&
+  detailArea2 &&
 
   selectedCard
 
 ){
 
-  detailArea.style.display =
+  detailArea2.style.display =
 
     "block";
 
   selectedCard.after(
 
-    detailArea
+    detailArea2
 
   );
 
@@ -221,11 +200,7 @@ if(
 
 function toggleEventList(){
 
-  alert(
-
-    selectedEventId
-
-  );
+  
 
   eventListCollapsed =
 
@@ -345,11 +320,11 @@ function openEvent(id){
 
   selectedEventId = id;
 
-alert("openEvent:" + id);
+
  
  renderEvents();
 
-alert("2");
+
  
   const event =
 
@@ -357,7 +332,7 @@ alert("2");
 
   if(!event) return;
 
-alert("3");
+
  
   const detailArea =
 
@@ -367,15 +342,7 @@ alert("3");
 
     );
 
-alert(
 
-  detailArea
-
-  ? "detail OK"
-
-  : "detail NG"
-
-)
  
   if(!detailArea) return;
 
@@ -427,7 +394,7 @@ if(
 
 ){
 
-  alert("after実行");
+  
 
   selectedCard.after(
 
