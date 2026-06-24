@@ -1,15 +1,5 @@
 const STORAGE_KEY = "pokemonSleepTrackerLite";
-window.onerror = function(message, source, line){
- 
-  alert(
 
-    "JSエラー\n" +
-
-    message +
-
-    "\n行:" + line
-
-  );
 
 };
 let events = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
