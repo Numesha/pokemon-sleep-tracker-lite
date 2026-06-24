@@ -229,21 +229,21 @@ if(selectedEventId){
 
 function toggleEventList(){
 
+  alert(
+
+    document.getElementById(
+
+      "eventDetail"
+
+    ).style.display
+
+  );
+
   eventListCollapsed =
 
     !eventListCollapsed;
 
   renderEvents();
-
-  if(selectedEventId){
-
-    openEvent(
-
-      selectedEventId
-
-    );
-
-  }
 
 }
 
