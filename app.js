@@ -271,21 +271,17 @@ detailArea.style.display =
 
   "block";
 
-  document.getElementById("detailTitle").textContent =
+document.getElementById("detailTitle").textContent =
 
-    event.name;
+  event.name;
 
-  currentDay = 1;
+currentDay = 1;
 
 updateDayView();
 
 renderRecords();
 
 renderPokemonCandidates();
-
-const detailArea =
-
-  document.getElementById("eventDetail");
 
 const eventCard =
 
