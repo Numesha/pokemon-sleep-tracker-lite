@@ -133,6 +133,30 @@ div.id = `event-${event.id}`;
 
   });
 
+if(selectedEventId){
+
+  const selectedCard =
+
+    document.getElementById(
+
+      `event-${selectedEventId}`
+
+    );
+
+  if(selectedCard){
+
+    selectedCard.style.background =
+
+      "#e8f4ff";
+
+    selectedCard.style.border =
+
+      "2px solid #4da3ff";
+
+  }
+
+}
+  
 }
 
 function toggleEventList(){
@@ -142,6 +166,12 @@ function toggleEventList(){
     !eventListCollapsed;
 
   renderEvents();
+
+  if(selectedEventId){
+
+    openEvent(selectedEventId);
+
+  }
 
 }
 
@@ -1641,6 +1671,12 @@ function undoLastAction(){
 
   renderEvents();
 
+if(selectedEventId){
+
+  openEvent(selectedEventId);
+
+}
+  
   if(selectedEventId){
 
     renderRecords();
