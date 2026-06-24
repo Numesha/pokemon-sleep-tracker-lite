@@ -229,13 +229,21 @@ if(selectedEventId){
 
 function toggleEventList(){
 
-  alert("toggle実行");
-
   eventListCollapsed =
 
     !eventListCollapsed;
 
   renderEvents();
+
+  if(selectedEventId){
+
+    openEvent(
+
+      selectedEventId
+
+    );
+
+  }
 
 }
 
