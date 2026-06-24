@@ -164,31 +164,7 @@ const detailArea =
 
   );
 
-alert(
 
-  document.body.innerHTML.includes(
-
-    'id="eventDetail"'
-
-  )
-
-);
- 
-alert(
-
-  "detail=" +
-
-  (detailArea ? "OK" : "NG") +
-
-  "\ncard=" +
-
-  (selectedCard ? "OK" : "NG") +
-
-  "\ndisplay=" +
-
-  detailArea?.style.display
-
-);
 
 if(
 
@@ -248,7 +224,41 @@ if(selectedEventId){
   }
 
 }
-  
+
+const detailArea =
+
+  document.getElementById(
+
+    "eventDetail"
+
+  );
+
+const selectedCard =
+
+  document.getElementById(
+
+    `event-${selectedEventId}`
+
+  );
+
+if(
+
+  detailArea &&
+
+  selectedCard &&
+
+  detailArea.style.display === "block"
+
+){
+
+  selectedCard.after(
+
+    detailArea
+
+  );
+
+}
+ 
 }
 
 function toggleEventList(){
