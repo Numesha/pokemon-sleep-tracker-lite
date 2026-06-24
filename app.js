@@ -439,7 +439,7 @@ if(
 
 }
   
-renderEvents();
+// renderEvents();
 
 const selectedCard =
 
