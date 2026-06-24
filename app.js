@@ -159,7 +159,45 @@ if(selectedEventId){
 
 }
 
+const cards =
 
+  document.querySelectorAll(
+
+    '[id^="event-"]'
+
+  );
+
+cards.forEach(card => {
+
+  card.style.background = "#fff";
+
+  card.style.border = "1px solid #ddd";
+
+});
+
+if(selectedEventId){
+
+  const selectedCard =
+
+    document.getElementById(
+
+      `event-${selectedEventId}`
+
+    );
+
+  if(selectedCard){
+
+    selectedCard.style.background =
+
+      "#e8f4ff";
+
+    selectedCard.style.border =
+
+      "2px solid #4da3ff";
+
+  }
+
+}
   
 }
 
@@ -272,6 +310,8 @@ renderPokemonCandidates();
 function openEvent(id){
 
   selectedEventId = id;
+
+  renderEvents();
 
   const event =
 
