@@ -303,7 +303,7 @@ function openEvent(id){
 
   selectedEventId = id;
 
- 
+ renderEvents();
 
   const event =
 
@@ -364,7 +364,7 @@ function openEvent(id){
     );
 
   }
-    renderEvents(); 
+   
 }
 
 function prevDay(){
