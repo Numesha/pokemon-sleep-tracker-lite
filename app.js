@@ -64,17 +64,13 @@ if(toggleBtn){
 
 }
 
-if(eventListCollapsed){
+eventList.style.display =
 
-  eventList.style.display = "none";
+  eventListCollapsed
 
-  return;
+  ? "none"
 
-}else{
-
-  eventList.style.display = "block";
-
-}
+  : "block";
   
   if (!eventList) return;
 
@@ -265,9 +261,15 @@ document
 
   if(!event) return;
 
-  document.getElementById("eventDetail").style.display =
+  const detailArea =
 
-    "block";
+  document.getElementById("eventDetail");
+
+if(!detailArea) return;
+
+detailArea.style.display =
+
+  "block";
 
   document.getElementById("detailTitle").textContent =
 
