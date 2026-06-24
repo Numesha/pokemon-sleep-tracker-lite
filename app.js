@@ -175,7 +175,9 @@ if(
   detailArea.style.display !== "none"
 
 ){
-
+  
+alert("after実行");
+  
   selectedCard.after(
 
     detailArea
