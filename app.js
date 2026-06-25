@@ -155,11 +155,11 @@ div.id = `event-${event.id}`;
 
 </button>
 
-  <button>
+<button onclick="moveEventDown(${index})">
 
-    ↓
+  ↓
 
-  </button>
+</button>
 
   <button onclick="editEvent(${event.id})">
 
@@ -415,6 +415,40 @@ function moveEventUp(index){
     events[index],
 
     events[index - 1]
+
+  ];
+
+  saveData();
+
+  renderEvents();
+
+}
+
+function moveEventDown(index){
+
+  if(
+
+    index ===
+
+    events.length - 1
+
+  ){
+
+    return;
+
+  }
+
+  [
+
+    events[index],
+
+    events[index + 1]
+
+  ] = [
+
+    events[index + 1],
+
+    events[index]
 
   ];
 
