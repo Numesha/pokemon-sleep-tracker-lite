@@ -225,17 +225,37 @@ editingEventId === event.id
 
 >${event.note}</textarea>
 
-<button onclick="saveEditEvent(${event.id})">
+<div style="display:flex; gap:8px; margin-top:10px;">
 
-保存
+  <button
 
-</button>
+    onclick="saveEditEvent(${event.id})"
 
-<button onclick="cancelEditEvent()">
+    class="primary"
 
-キャンセル
+    style="flex:1;"
 
-</button>
+  >
+
+    保存
+
+  </button>
+
+  <button
+
+    onclick="cancelEditEvent()"
+
+    class="secondary"
+
+    style="flex:1;"
+
+  >
+
+    キャンセル
+
+  </button>
+
+</div>
 
 `
 
