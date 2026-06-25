@@ -179,7 +179,7 @@ ${
 
 }
 
-  <button onclick="editEvent(${event.id})">
+  <button onclick="startEditEvent(${event.id})">
 
   編集
 
@@ -340,6 +340,15 @@ openEvent(newEvent.id);
   document.getElementById("eventNote").value = "";
 
 }
+
+function startEditEvent(id){
+
+  editingEventId = id;
+
+  renderEvents();
+
+}
+
 function editEvent(id){
 
   const event =
