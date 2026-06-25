@@ -4,6 +4,8 @@ let events = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
 
 let selectedEventId = null;
 
+let editingEventId = null;
+
 let currentDay = 1;
 
 let currentSession = 1;
