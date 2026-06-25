@@ -324,7 +324,37 @@ openEvent(newEvent.id);
 }
 function editEvent(id){
 
-  alert("編集:" + id);
+  const event =
+
+    events.find(
+
+      e => e.id === id
+
+    );
+
+  if(!event) return;
+
+  const newName =
+
+    prompt(
+
+      "イベント名",
+
+      event.name
+
+    );
+
+  if(newName === null){
+
+    return;
+
+  }
+
+  event.name = newName;
+
+  saveData();
+
+  renderEvents();
 
 }
 function deleteEvent(index) {
