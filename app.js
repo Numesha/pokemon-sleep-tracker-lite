@@ -352,9 +352,47 @@ function editEvent(id){
 
   event.name = newName;
 
-  saveData();
+const newDate =
 
-  renderEvents();
+  prompt(
+
+    "開始日",
+
+    event.date
+
+  );
+
+if(newDate !== null){
+
+  event.date = newDate;
+
+}
+
+const newNote =
+
+  prompt(
+
+    "イベント備考",
+
+    event.note
+
+  );
+
+if(newNote !== null){
+
+  event.note = newNote;
+
+}
+
+saveData();
+
+renderEvents();
+
+if(selectedEventId){
+
+  openEvent(selectedEventId);
+
+}
 
 }
 function deleteEvent(index) {
