@@ -133,21 +133,79 @@ div.id = `event-${event.id}`;
 
     div.innerHTML = `
 
-<h3
+<div
 
-  onclick="openEvent(${event.id})"
+  style="
 
-  style="cursor:pointer;"
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:4px;
+
+  "
 
 >
 
-  ${event.name}
+  <h3
 
-</h3>
+    onclick="openEvent(${event.id})"
 
-<p>${event.date}</p>
+    style="
 
-<p>${event.note}</p>
+      cursor:pointer;
+
+      margin:0;
+
+      font-size:18px;
+
+    "
+
+  >
+
+    ${event.name}
+
+  </h3>
+
+  <span
+
+    style="
+
+      font-size:13px;
+
+      color:#666;
+
+      white-space:nowrap;
+
+    "
+
+  >
+
+    📅 ${event.date}
+
+  </span>
+
+</div>
+
+<p
+
+  style="
+
+    margin:4px 0 8px;
+
+    font-size:14px;
+
+    color:#666;
+
+  "
+
+>
+
+  📝 ${event.note}
+
+</p>
 
 <div>
 
