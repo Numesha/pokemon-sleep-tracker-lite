@@ -32,7 +32,21 @@ function renderEvents() {
 
   const eventList = document.getElementById("eventList");
 
+const createArea =
 
+  document.getElementById(
+
+    "eventCreateArea"
+
+  );
+
+if(createArea){
+
+  createArea.open =
+
+    events.length === 0;
+
+}
  
 
 
