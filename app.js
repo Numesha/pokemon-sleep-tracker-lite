@@ -193,6 +193,56 @@ ${
 
 </div>
 
+${
+
+editingEventId === event.id
+
+? `
+
+<hr>
+
+<input
+
+  id="editEventName"
+
+  value="${event.name}"
+
+>
+
+<input
+
+  id="editEventDate"
+
+  type="date"
+
+  value="${event.date}"
+
+>
+
+<textarea
+
+  id="editEventNote"
+
+>${event.note}</textarea>
+
+<button>
+
+保存
+
+</button>
+
+<button>
+
+キャンセル
+
+</button>
+
+`
+
+: ""
+
+}
+
 `;
     
     eventList.appendChild(div);
