@@ -225,13 +225,13 @@ editingEventId === event.id
 
 >${event.note}</textarea>
 
-<button>
+<button onclick="saveEditEvent(${event.id})">
 
 保存
 
 </button>
 
-<button>
+<button onclick="cancelEditEvent()">
 
 キャンセル
 
@@ -394,6 +394,64 @@ openEvent(newEvent.id);
 function startEditEvent(id){
 
   editingEventId = id;
+
+  renderEvents();
+
+}
+
+function saveEditEvent(id){
+
+  const event =
+
+    events.find(
+
+      e => e.id === id
+
+    );
+
+  if(!event) return;
+
+  event.name =
+
+    document.getElementById(
+
+      "editEventName"
+
+    ).value;
+
+  event.date =
+
+    document.getElementById(
+
+      "editEventDate"
+
+    ).value;
+
+  event.note =
+
+    document.getElementById(
+
+      "editEventNote"
+
+    ).value;
+
+  editingEventId = null;
+
+  saveData();
+
+  renderEvents();
+
+  if(selectedEventId === id){
+
+    openEvent(id);
+
+  }
+
+}
+
+function cancelEditEvent(){
+
+  editingEventId = null;
 
   renderEvents();
 
