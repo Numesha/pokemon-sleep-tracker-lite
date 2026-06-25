@@ -123,11 +123,11 @@ div.id = `event-${event.id}`;
     
     div.style.border = "1px solid #ddd";
 
-    div.style.padding = "10px";
+    div.style.padding = "8px";
 
-    div.style.marginBottom = "10px";
+div.style.marginBottom = "6px";
 
-    div.style.borderRadius = "10px";
+div.style.borderRadius = "8px";
 
     div.style.background = "#fff";
 
