@@ -149,11 +149,11 @@ div.id = `event-${event.id}`;
 
 <div>
 
-  <button>
+  <button onclick="moveEventUp(${index})">
 
-    ↑
+  ↑
 
-  </button>
+</button>
 
   <button>
 
@@ -395,6 +395,35 @@ if(selectedEventId){
 }
 
 }
+
+function moveEventUp(index){
+
+  if(index === 0){
+
+    return;
+
+  }
+
+  [
+
+    events[index - 1],
+
+    events[index]
+
+  ] = [
+
+    events[index],
+
+    events[index - 1]
+
+  ];
+
+  saveData();
+
+  renderEvents();
+
+}
+
 function deleteEvent(index) {
 
 createBackup();
