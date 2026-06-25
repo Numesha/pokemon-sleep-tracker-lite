@@ -189,6 +189,12 @@ div.style.borderRadius = "8px";
 
 </div>
 
+${
+
+event.note
+
+? `
+
 <p
 
   style="
@@ -203,9 +209,15 @@ div.style.borderRadius = "8px";
 
 >
 
-  📝 ${event.note}
+  ${event.note}
 
 </p>
+
+`
+
+: ""
+
+}
 
 <div>
 
