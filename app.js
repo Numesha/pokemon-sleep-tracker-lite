@@ -211,7 +211,11 @@ editingEventId === event.id
 
 ? `
 
-<hr>
+<div style="margin-top:10px; padding:12px; border:1px solid #ddd; border-radius:10px; background:#f8f9fa;">
+
+<b>📝 イベント編集</b>
+
+<br><br>
 
 <input
 
@@ -266,6 +270,8 @@ editingEventId === event.id
     キャンセル
 
   </button>
+
+</div>
 
 </div>
 
