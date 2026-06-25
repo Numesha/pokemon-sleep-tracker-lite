@@ -143,9 +143,29 @@ div.id = `event-${event.id}`;
 
 </h3>
 
-  <p>${event.date}</p>
+<p>${event.date}</p>
 
-  <p>${event.note}</p>
+<p>${event.note}</p>
+
+<div>
+
+  <button>
+
+    ↑
+
+  </button>
+
+  <button>
+
+    ↓
+
+  </button>
+
+  <button>
+
+    編集
+
+  </button>
 
   <button onclick="deleteEvent(${index})">
 
@@ -153,7 +173,10 @@ div.id = `event-${event.id}`;
 
   </button>
 
+</div>
+
 `;
+    
     eventList.appendChild(div);
 
   });
