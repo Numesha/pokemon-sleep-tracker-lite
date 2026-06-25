@@ -149,17 +149,33 @@ div.id = `event-${event.id}`;
 
 <div>
 
-  <button onclick="moveEventUp(${index})">
+  ${
 
-  ↑
+  index > 0
 
-</button>
+  ? `<button onclick="moveEventUp(${index})">
 
-<button onclick="moveEventDown(${index})">
+       ↑
 
-  ↓
+     </button>`
 
-</button>
+  : ""
+
+}
+
+${
+
+  index < events.length - 1
+
+  ? `<button onclick="moveEventDown(${index})">
+
+       ↓
+
+     </button>`
+
+  : ""
+
+}
 
   <button onclick="editEvent(${event.id})">
 
