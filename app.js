@@ -457,79 +457,7 @@ function cancelEditEvent(){
 
 }
 
-function editEvent(id){
 
-  const event =
-
-    events.find(
-
-      e => e.id === id
-
-    );
-
-  if(!event) return;
-
-  const newName =
-
-    prompt(
-
-      "イベント名",
-
-      event.name
-
-    );
-
-  if(newName === null){
-
-    return;
-
-  }
-
-  event.name = newName;
-
-const newDate =
-
-  prompt(
-
-    "開始日",
-
-    event.date
-
-  );
-
-if(newDate !== null){
-
-  event.date = newDate;
-
-}
-
-const newNote =
-
-  prompt(
-
-    "イベント備考",
-
-    event.note
-
-  );
-
-if(newNote !== null){
-
-  event.note = newNote;
-
-}
-
-saveData();
-
-renderEvents();
-
-if(selectedEventId){
-
-  openEvent(selectedEventId);
-
-}
-
-}
 
 function moveEventUp(index){
 
