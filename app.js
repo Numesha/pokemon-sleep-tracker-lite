@@ -161,11 +161,11 @@ div.id = `event-${event.id}`;
 
   </button>
 
-  <button>
+  <button onclick="editEvent(${event.id})">
 
-    編集
+  編集
 
-  </button>
+</button>
 
   <button onclick="deleteEvent(${index})">
 
@@ -322,7 +322,11 @@ openEvent(newEvent.id);
   document.getElementById("eventNote").value = "";
 
 }
+function editEvent(id){
 
+  alert("編集:" + id);
+
+}
 function deleteEvent(index) {
 
 createBackup();
