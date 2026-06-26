@@ -725,13 +725,7 @@ function openEvent(id){
 
 
  
-  const detailArea =
-
-    document.getElementById(
-
-      "eventDetail"
-
-    );
+  
 
 
  
