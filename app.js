@@ -10,6 +10,18 @@ let selectedEventId =
 
   : null;
 
+let currentEventId =
+
+  Number(
+
+    localStorage.getItem(
+
+      "currentEventId"
+
+    )
+
+  ) || selectedEventId;
+
 let editingEventId = null;
 
 let currentDay = 1;
