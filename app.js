@@ -273,6 +273,12 @@ ${
 
 }
 
+<button onclick="setCurrentEvent(${event.id})">
+
+  🚩
+
+</button>
+
   ${
 
 editingEventId === event.id
@@ -656,6 +662,22 @@ function moveEventDown(index){
   ];
 
   saveData();
+
+  renderEvents();
+
+}
+
+function setCurrentEvent(id){
+
+  currentEventId = id;
+
+  localStorage.setItem(
+
+    "currentEventId",
+
+    id
+
+  );
 
   renderEvents();
 
