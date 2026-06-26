@@ -393,13 +393,7 @@ editingEventId === event.id
 
 
 
-const detailArea2 =
 
-  document.getElementById(
-
-    "eventDetail"
-
-  );
 
 const selectedCard =
 
@@ -725,7 +719,13 @@ function openEvent(id){
 
 
  
-  
+  const detailArea =
+
+    document.getElementById(
+
+      "eventDetail"
+
+    );
 
 
  
