@@ -2444,11 +2444,15 @@ function initializeApp(){
 
   renderPokemonCandidates();
 
-  if(selectedEventId){
+  if(currentEventId){
 
-    openEvent(selectedEventId);
+  openEvent(currentEventId);
 
-  }
+}else if(selectedEventId){
+
+  openEvent(selectedEventId);
+
+}
 
 }
 
