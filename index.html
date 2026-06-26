@@ -184,6 +184,22 @@ background:#fafafa;
 
   <h2 id="detailTitle"></h2>
 
+<div
+
+  style="
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:8px 0;
+
+  "
+
+>
+
   <div>
 
     <button onclick="prevDay()">◀</button>
@@ -194,25 +210,33 @@ background:#fafafa;
 
   </div>
 
-<div>
+  <div>
 
-  <button onclick="selectSession(1)">
+    <button
 
-    1回目
+      id="sessionBtn1"
 
-  </button>
+      onclick="selectSession(1)"
 
-  <button onclick="selectSession(2)">
+    >
 
-    2回目
+      ①
 
-  </button>
+    </button>
 
-  <span id="sessionLabel">
+    <button
 
-    1回目
+      id="sessionBtn2"
 
-  </span>
+      onclick="selectSession(2)"
+
+    >
+
+      ②
+
+    </button>
+
+  </div>
 
 </div>
     
