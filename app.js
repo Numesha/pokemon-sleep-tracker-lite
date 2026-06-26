@@ -751,6 +751,8 @@ if(currentArea){
 
   `;
 
+currentArea.appendChild(detailArea);
+  
 }
   
   currentDay = 1;
@@ -773,24 +775,6 @@ selectSession(1);
     );
 
   
-
-if(
-
-  selectedCard &&
-
-  detailArea
-
-){
-
-  
-
-  selectedCard.after(
-
-    detailArea
-
-  );
-
-}
    
 }
 
