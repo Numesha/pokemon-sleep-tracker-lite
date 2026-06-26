@@ -527,6 +527,16 @@ function saveEvent() {
 
   saveData();
 
+currentEventId = newEvent.id;
+
+localStorage.setItem(
+
+  "currentEventId",
+
+  newEvent.id
+
+);
+  
   renderEvents();
 
 openEvent(newEvent.id);
