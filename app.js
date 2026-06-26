@@ -755,7 +755,7 @@ if(currentArea){
 
     ">
 
-      ${event.name}
+🚩 ${event.name}
 
     </div>
 
