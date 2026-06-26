@@ -2260,3 +2260,15 @@ if(existing){
   });
 
 }
+
+renderEvents();
+
+renderFavorites();
+
+renderPokemonCandidates();
+
+if(selectedEventId){
+
+  openEvent(selectedEventId);
+
+}
