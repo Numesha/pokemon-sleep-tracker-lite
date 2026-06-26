@@ -207,7 +207,9 @@ ${currentEventId === event.id ? "🚩 " : ""}${event.name}
 
   >
 
-    📅 ${event.date}
+📅 ${event.date}
+
+${selectedEventId === event.id ? " 👁" : ""}
 
   </span>
 
