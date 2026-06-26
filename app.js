@@ -36,6 +36,12 @@ function saveData() {
 
 }
 
+//=====================
+
+// 📋 イベント一覧
+
+//=====================
+
 function renderEvents() {
 
   const eventList = document.getElementById("eventList");
@@ -437,6 +443,12 @@ function toggleEventList(){
 
 }
 
+//=====================
+
+// ✏️ イベント操作
+
+//=====================
+
 function saveEvent() {
   
   const name =
@@ -659,7 +671,11 @@ document
 
   .addEventListener("click", saveEvent);
 
+//=====================
 
+// 📅 Day操作
+
+//=====================
 
 function openEvent(id){
 
@@ -841,6 +857,12 @@ renderRecords();
 renderPokemonCandidates();
   
 }
+
+//=====================
+
+// 💤 ポケモン記録
+
+//=====================
 
 function addPokemonRecord(){
 
@@ -1150,6 +1172,13 @@ createBackup();
   renderPokemonCandidates();
 
 }
+
+
+//=====================
+
+// 📊 集計・バックアップ
+
+//=====================
 
 function showSummary(){
 
@@ -2155,6 +2184,12 @@ renderFavorites();
 
 }
 
+//=====================
+
+// ⭐ お気に入り
+
+//=====================
+
 function renderFavorites(){
 
   const area =
@@ -2269,6 +2304,12 @@ if(selectedEventId){
   openEvent(selectedEventId);
 
 }
+
+//=====================
+
+// 🚀 初期化
+
+//=====================
 
 function initializeApp(){
 
