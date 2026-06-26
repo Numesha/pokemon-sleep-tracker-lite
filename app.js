@@ -273,13 +273,9 @@ ${
 
 }
 
-<button onclick="setCurrentEvent(${event.id})">
 
-  🚩
 
-</button>
-
-  ${
+${
 
 editingEventId === event.id
 
@@ -297,11 +293,17 @@ editingEventId === event.id
 
 }
 
-  <button onclick="deleteEvent(${index})">
+<button onclick="setCurrentEvent(${event.id})">
 
-    削除
+  🚩
 
-  </button>
+</button>
+
+<button onclick="deleteEvent(${index})">
+
+  削除
+
+</button>
 
 </div>
 
