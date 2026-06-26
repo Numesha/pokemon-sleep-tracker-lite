@@ -707,6 +707,10 @@ function openEvent(id){
 
   currentDay = 1;
 
+currentSession = 1;
+
+selectSession(1);
+  
   updateDayView();
 
   renderRecords();
@@ -1980,13 +1984,33 @@ function selectSession(session){
 
   currentSession = session;
 
-  document.getElementById(
+  const btn1 =
 
-    "sessionLabel"
+    document.getElementById("sessionBtn1");
 
-  ).textContent =
+  const btn2 =
 
-    `${session}回目`;
+    document.getElementById("sessionBtn2");
+
+  if(btn1 && btn2){
+
+    btn1.style.background =
+
+      session === 1 ? "#4da3ff" : "";
+
+    btn1.style.color =
+
+      session === 1 ? "#fff" : "";
+
+    btn2.style.background =
+
+      session === 2 ? "#4da3ff" : "";
+
+    btn2.style.color =
+
+      session === 2 ? "#fff" : "";
+
+  }
 
   renderRecords();
 
