@@ -2371,3 +2371,19 @@ function initializeApp(){
 }
 
 initializeApp();
+
+//=====================
+
+// 表示中イベントへ詳細画面を移動
+
+//=====================
+
+const currentArea = document.getElementById("currentEventArea");
+
+const detail = document.getElementById("eventDetail");
+
+if (currentArea && detail) {
+
+  currentArea.appendChild(detail);
+
+}
