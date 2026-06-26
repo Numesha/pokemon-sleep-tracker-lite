@@ -709,14 +709,13 @@ function openEvent(id){
 
 currentSession = 1;
 
+updateDayView();
+  
 selectSession(1);
   
-  updateDayView();
+  
 
-  renderRecords();
-
-  renderPokemonCandidates();
-
+  
   const selectedCard =
 
     document.getElementById(
