@@ -670,7 +670,21 @@ createBackup();
   renderEvents();
 
 }
+function setCurrentEvent(id){
 
+  currentEventId = id;
+
+  saveData();
+
+  renderEvents();
+
+  if(selectedEventId === id){
+
+    openEvent(id);
+
+  }
+
+}
 document
 
   .getElementById("saveEventBtn")
