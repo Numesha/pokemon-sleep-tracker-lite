@@ -1000,6 +1000,8 @@ nameSpan.textContent = record.name;
 
 nameSpan.style.flex = "1";
 
+nameSpan.style.fontWeight = "600";
+    
 div.appendChild(nameSpan);
 
 const minusBtn =
