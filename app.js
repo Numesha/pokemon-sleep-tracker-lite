@@ -770,7 +770,31 @@ if(currentArea){
       📅 ${event.date}
 
     </div>
+${
 
+  event.note
+
+  ? `
+
+  <div style="
+
+    margin-top:10px;
+
+    color:#555;
+
+    font-size:14px;
+
+  ">
+
+    📝 ${event.note}
+
+  </div>
+
+  `
+
+  : ""
+
+}
   </div>
 
 `;
