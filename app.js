@@ -409,17 +409,18 @@ if(
 
 }
 
-  if(selectedCard){
+if(selectedCard){
 
   selectedCard.style.background =
 
-    "#fff9db";
+    "#fff";
 
   selectedCard.style.border =
 
-    "2px solid #f4b400";
+    "2px solid #ddd";
 
 }
+  
 }
 
 function toggleEventList(){
