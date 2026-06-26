@@ -2260,7 +2260,6 @@ if(existing){
   });
 
 }
-
 renderEvents();
 
 renderFavorites();
@@ -2272,3 +2271,21 @@ if(selectedEventId){
   openEvent(selectedEventId);
 
 }
+
+function initializeApp(){
+
+  renderEvents();
+
+  renderFavorites();
+
+  renderPokemonCandidates();
+
+  if(selectedEventId){
+
+    openEvent(selectedEventId);
+
+  }
+
+}
+
+initializeApp();
