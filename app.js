@@ -70,11 +70,11 @@ if(toggleBtn){
 
   toggleBtn.textContent =
 
-    eventListCollapsed
+  eventListCollapsed
 
-    ? "イベント一覧を表示"
+  ? "📂 過去イベントを表示"
 
-    : "イベント一覧を隠す";
+  : "📁 過去イベントを隠す";
 
 }
   
