@@ -719,6 +719,40 @@ function openEvent(id){
 
     event.name;
 
+const currentArea =
+
+  document.getElementById(
+
+    "currentEventArea"
+
+  );
+
+if(currentArea){
+
+  currentArea.innerHTML = `
+
+    <h3 style="margin:0;">
+
+      ${event.name}
+
+    </h3>
+
+    <p style="
+
+      margin:6px 0 0;
+
+      color:#666;
+
+    ">
+
+      📅 ${event.date}
+
+    </p>
+
+  `;
+
+}
+  
   currentDay = 1;
 
 currentSession = 1;
