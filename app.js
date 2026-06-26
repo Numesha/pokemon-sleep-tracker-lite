@@ -659,9 +659,7 @@ document
 
   .addEventListener("click", saveEvent);
 
-renderEvents();
 
-renderPokemonCandidates();
 
 function openEvent(id){
 
