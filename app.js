@@ -189,7 +189,7 @@ div.style.borderRadius = "8px";
 
   >
 
-${selectedEventId === event.id ? "🚩 " : ""}${event.name}
+${currentEventId === event.id ? "🚩 " : ""}${event.name}
 
   </h3>
 
