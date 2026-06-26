@@ -1030,6 +1030,10 @@ countSpan.style.minWidth = "24px";
 
 countSpan.style.textAlign = "center";
 
+countSpan.style.fontWeight = "bold";
+
+countSpan.style.fontSize = "16px";
+    
 div.appendChild(countSpan);
 
 const plusBtn =
