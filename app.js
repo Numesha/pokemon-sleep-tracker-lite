@@ -1063,6 +1063,9 @@ deleteBtn.onclick = () => {
 };
 
 div.appendChild(deleteBtn);
+ 
+    deleteBtn.style.marginLeft = "16px";
+    
     area.appendChild(div);
 
   });
