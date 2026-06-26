@@ -177,7 +177,7 @@ div.style.borderRadius = "8px";
 
   >
 
-    ${event.name}
+${selectedEventId === event.id ? "🚩 " : ""}${event.name}
 
   </h3>
 
