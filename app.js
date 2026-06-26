@@ -425,25 +425,7 @@ const selectedCard =
 
   );
 
-if(
 
-  detailArea2 &&
-
-  selectedCard
-
-){
-
-  detailArea2.style.display =
-
-    "block";
-
-  selectedCard.after(
-
-    detailArea2
-
-  );
-
-}
 
 if(selectedCard){
 
