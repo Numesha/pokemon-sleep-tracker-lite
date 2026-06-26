@@ -98,23 +98,7 @@ if(toggleBtn){
   
   if (!eventList) return;
 
-const detailArea =
 
-  document.getElementById(
-
-    "eventDetail"
-
-  );
-
-if(detailArea){
-
-  document.body.appendChild(
-
-    detailArea
-
-  );
-
-}
   
   eventList.innerHTML = "";
 
