@@ -266,15 +266,61 @@ background:#fafafa;
     
 <h3>ポケモン記録</h3>
 
-<input
+<div
 
-  id="pokemonName"
+  style="
 
-list="pokemonCandidates"
-  
-  placeholder="ポケモン名"
+    display:flex;
 
-/>
+    gap:8px;
+
+    align-items:center;
+
+    margin-bottom:10px;
+
+  "
+
+>
+
+  <input
+
+    id="pokemonName"
+
+    list="pokemonCandidates"
+
+    placeholder="ポケモン名を入力"
+
+    style="
+
+      margin:0;
+
+      flex:1;
+
+    "
+
+  />
+
+  <button
+
+    onclick="addPokemonRecord()"
+
+    style="
+
+      width:48px;
+
+      height:44px;
+
+      flex-shrink:0;
+
+    "
+
+  >
+
+    ＋
+
+  </button>
+
+</div>
 
 <datalist id="pokemonCandidates"></datalist>
 
@@ -330,11 +376,7 @@ list="pokemonCandidates"
 
 </details>
     
-<button onclick="addPokemonRecord()">
 
-  ＋
-
-</button>
 
 <div id="recordList"></div>
 
