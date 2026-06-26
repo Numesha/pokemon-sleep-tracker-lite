@@ -963,11 +963,25 @@ const records =
 
     const div =
 
-      document.createElement("div");
+  document.createElement("div");
 
-  div.innerHTML =
+div.style.display = "flex";
 
-  `${record.name} `;
+div.style.alignItems = "center";
+
+div.style.justifyContent = "space-between";
+
+div.style.padding = "4px 0";
+
+const nameSpan =
+
+  document.createElement("span");
+
+nameSpan.textContent = record.name;
+
+nameSpan.style.flex = "1";
+
+div.appendChild(nameSpan);
 
 const minusBtn =
 
@@ -983,11 +997,19 @@ minusBtn.onclick = () => {
 
 div.appendChild(minusBtn);
 
-div.append(
+const countSpan =
 
-  ` ${record.count} `
+  document.createElement("span");
 
-);
+countSpan.textContent = record.count;
+
+countSpan.style.margin = "0 8px";
+
+countSpan.style.minWidth = "24px";
+
+countSpan.style.textAlign = "center";
+
+div.appendChild(countSpan);
 
 const plusBtn =
 
@@ -1007,7 +1029,7 @@ const deleteBtn =
 
   document.createElement("button");
 
-deleteBtn.textContent = "削除";
+deleteBtn.textContent = "🗑️";
 
 deleteBtn.onclick = () => {
 
