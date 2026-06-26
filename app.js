@@ -2143,7 +2143,7 @@ if(selectedEventId){
 
 renderFavorites();
     
-renderFavorites();
+
     
   }
 
