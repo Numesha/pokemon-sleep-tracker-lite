@@ -295,11 +295,25 @@ editingEventId === event.id
 
 }
 
-<button onclick="setCurrentEvent(${event.id})">
+${
 
-  🚩
+currentEventId !== event.id
 
-</button>
+? `<button
+
+     onclick="setCurrentEvent(${event.id})"
+
+     title="現在のイベントに設定"
+
+   >
+
+     🚩
+
+   </button>`
+
+: ""
+
+}
 
 <button onclick="deleteEvent(${index})">
 
