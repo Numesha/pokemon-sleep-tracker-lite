@@ -731,25 +731,49 @@ if(currentArea){
 
   currentArea.innerHTML = `
 
-    <h3 style="margin:0;">
+  <div style="
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    padding:12px;
+
+    margin-bottom:12px;
+
+    background:#fafafa;
+
+  ">
+
+    <div style="
+
+      font-size:20px;
+
+      font-weight:bold;
+
+      margin-bottom:6px;
+
+    ">
 
       ${event.name}
 
-    </h3>
+    </div>
 
-    <p style="
-
-      margin:6px 0 0;
+    <div style="
 
       color:#666;
+
+      font-size:14px;
 
     ">
 
       📅 ${event.date}
 
-    </p>
+    </div>
 
-  `;
+  </div>
+
+`;
 
 currentArea.appendChild(detailArea);
   
