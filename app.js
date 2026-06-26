@@ -815,19 +815,7 @@ updateDayView();
   
 selectSession(1);
   
-  
 
-  
-  const selectedCard =
-
-    document.getElementById(
-
-      `event-${id}`
-
-    );
-
-  
-   
 }
 
 function prevDay(){
