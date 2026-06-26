@@ -408,15 +408,16 @@ if(
   );
 
 }
- if(selectedCard){
+
+  if(selectedCard){
 
   selectedCard.style.background =
 
-    "#e8f4ff";
+    "#fff9db";
 
   selectedCard.style.border =
 
-    "2px solid #4da3ff";
+    "2px solid #f4b400";
 
 }
 }
