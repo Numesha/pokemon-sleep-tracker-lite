@@ -395,27 +395,7 @@ editingEventId === event.id
 
 
 
-const selectedCard =
 
-  document.getElementById(
-
-    `event-${selectedEventId}`
-
-  );
-
-
-
-if(selectedCard){
-
-  selectedCard.style.background =
-
-    "#fff";
-
-  selectedCard.style.border =
-
-    "2px solid #ddd";
-
-}
   
 }
 
