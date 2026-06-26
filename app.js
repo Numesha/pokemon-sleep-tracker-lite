@@ -817,6 +817,28 @@ function updateDayView(){
 
     event.days[currentDay].note;
 
+const summary =
+
+  document.querySelector(
+
+    "#dayNoteSection summary"
+
+  );
+
+if(summary){
+
+  summary.textContent =
+
+    event.days[currentDay].note.trim()
+
+    ? "Day備考（📝あり）"
+
+    : "Day備考";
+
+}
+  
+
+
 renderRecords();
 
 renderPokemonCandidates();
