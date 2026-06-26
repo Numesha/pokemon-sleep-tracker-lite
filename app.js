@@ -13,7 +13,7 @@ let selectedEventId =
 let currentEventId =
 
   Number(
-
+ 
     localStorage.getItem(
 
       "currentEventId"
