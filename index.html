@@ -185,236 +185,248 @@ background:#fafafa;
   イベント一覧を隠す
 
 </button>
-  
-<div id="eventList"></div>
 
   <div id="eventDetail" style="display:none;">
 
   <h2 id="detailTitle"></h2>
 
-<div
-
-  style="
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin:8px 0;
-
-  "
-
->
-
-  <div>
-
-    <button onclick="prevDay()">◀</button>
-
-    <span id="dayLabel">Day1</span>
-
-    <button onclick="nextDay()">▶</button>
-
-  </div>
-
-  <div>
-
-    <button
-
-      id="sessionBtn1"
-
-      onclick="selectSession(1)"
-
-    >
-
-      ①
-
-    </button>
-
-    <button
-
-      id="sessionBtn2"
-
-      onclick="selectSession(2)"
-
-    >
-
-      ②
-
-    </button>
-
-  </div>
-
-</div>
-    
-  <details id="dayNoteSection">
-
-  <summary>
-
-    Day備考
-
-  </summary>
-
-  <textarea
-
-    id="dayNote"
-
-    placeholder="Day備考"
-
-  ></textarea>
-
-  <button onclick="saveDayNote()">
-
-    保存
-
-  </button>
-
-</details>
-    
-<h3>ポケモン記録</h3>
-
-<div
-
-  style="
-
-    display:flex;
-
-    gap:8px;
-
-    align-items:center;
-
-    margin-bottom:10px;
-
-  "
-
->
-
-  <input
-
-    id="pokemonName"
-
-    list="pokemonCandidates"
-
-    placeholder="ポケモン名を入力"
+  <div
 
     style="
 
-      margin:0;
+      display:flex;
 
-      flex:1;
+      justify-content:space-between;
 
-    "
+      align-items:center;
 
-  />
-
-  <button
-
-    onclick="addPokemonRecord()"
-
-    style="
-
-      width:48px;
-
-      height:44px;
-
-      flex-shrink:0;
+      margin:8px 0;
 
     "
 
   >
 
-    ＋
+    <div>
+
+      <button onclick="prevDay()">◀</button>
+
+      <span id="dayLabel">Day1</span>
+
+      <button onclick="nextDay()">▶</button>
+
+    </div>
+
+    <div>
+
+      <button
+
+        id="sessionBtn1"
+
+        onclick="selectSession(1)"
+
+      >
+
+        ①
+
+      </button>
+
+      <button
+
+        id="sessionBtn2"
+
+        onclick="selectSession(2)"
+
+      >
+
+        ②
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <details id="dayNoteSection">
+
+    <summary>Day備考</summary>
+
+    <textarea
+
+      id="dayNote"
+
+      placeholder="Day備考"
+
+    ></textarea>
+
+    <button onclick="saveDayNote()">
+
+      保存
+
+    </button>
+
+  </details>
+
+  <h3>ポケモン記録</h3>
+
+  <div
+
+    style="
+
+      display:flex;
+
+      gap:8px;
+
+      align-items:center;
+
+      margin-bottom:10px;
+
+    "
+
+  >
+
+    <input
+
+      id="pokemonName"
+
+      list="pokemonCandidates"
+
+      placeholder="ポケモン名を入力"
+
+      style="
+
+        margin:0;
+
+        flex:1;
+
+      "
+
+    />
+
+    <button
+
+      onclick="addPokemonRecord()"
+
+      style="
+
+        width:48px;
+
+        height:44px;
+
+        flex-shrink:0;
+
+      "
+
+    >
+
+      ＋
+
+    </button>
+
+  </div>
+
+  <datalist id="pokemonCandidates"></datalist>
+
+  <details>
+
+    <summary id="favoriteTitle">
+
+      お気に入り (0)
+
+    </summary>
+
+    <div id="favoriteList"></div>
+
+  </details>
+
+  <details>
+
+    <summary id="currentCandidateTitle">
+
+      今回イベント候補 (0)
+
+    </summary>
+
+    <input
+
+      id="currentSearch"
+
+      placeholder="ポケモンを検索"
+
+    >
+
+    <div id="currentCandidateList"></div>
+
+  </details>
+
+  <details>
+
+    <summary id="allCandidateTitle">
+
+      全イベント候補 (0)
+
+    </summary>
+
+    <input
+
+      id="allSearch"
+
+      placeholder="ポケモンを検索"
+
+    >
+
+    <div id="allCandidateList"></div>
+
+  </details>
+
+  <div id="recordList"></div>
+
+  <button onclick="showSummary()">
+
+    📊 週間集計
 
   </button>
 
-</div>
+  <button onclick="undoLastAction()">
 
-<datalist id="pokemonCandidates"></datalist>
+    ↩ 元に戻す
 
-<details>
+  </button>
 
-  <summary id="favoriteTitle">
+  <div id="summaryArea" style="display:none;">
 
-    お気に入り (0)
+    <h3>週間集計</h3>
 
-  </summary>
+    <div id="summaryList"></div>
 
-  <div id="favoriteList"></div>
-
-</details>
-    
-<details>
-
-  <summary id="currentCandidateTitle">
-
-    今回イベント候補 (0)
-
-  </summary>
-
-<input
-
-  id="currentSearch"
-
-  placeholder="ポケモンを検索"
-
->
-  
-  <div id="currentCandidateList"></div>
-
-</details>
-
-<details>
-
-  <summary id="allCandidateTitle">
-
-    全イベント候補 (0)
-
-  </summary>
-
-<input
-
-  id="allSearch"
-
-  placeholder="ポケモンを検索"
-
->
-  
-  <div id="allCandidateList"></div>
-
-</details>
-    
-
-
-<div id="recordList"></div>
-
-<button onclick="showSummary()">
-
-📊 週間集計
-
-</button>
-
-<button onclick="undoLastAction()">
-
-↩ 元に戻す
-
-</button>
-    
-<div id="summaryArea" style="display:none;">
-
-  <h3>週間集計</h3>
-
-  <div id="summaryList"></div>
+  </div>
 
 </div>
 
- 
-  
 </div>
 
 <div class="card">
-  
-<h3>バックアップ</h3>
+
+  <h2>イベント一覧</h2>
+
+  <button
+
+    onclick="toggleEventList()"
+
+    id="toggleEventListBtn"
+
+  >
+
+    イベント一覧を隠す
+
+  </button>
+
+  <div id="eventList"></div>
+
+</div>
+
+<div class="card">
+
+  <h3>バックアップ</h3>
 
 <button onclick="exportData()">
 
