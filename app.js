@@ -2,7 +2,13 @@ const STORAGE_KEY = "pokemonSleepTrackerLite";
 
 let events = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
 
-let selectedEventId = null;
+let selectedEventId =
+
+  events.length > 0
+
+  ? events[0].id
+
+  : null;
 
 let editingEventId = null;
 
@@ -10,7 +16,7 @@ let currentDay = 1;
 
 let currentSession = 1;
 
-let eventListCollapsed = false;
+let eventListCollapsed = true;
 
 let history = [];
 
