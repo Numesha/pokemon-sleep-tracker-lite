@@ -1601,9 +1601,9 @@ const todayPokemon = {};
 
     "currentCandidateTitle"
 
-  ).textContent =
+ ).textContent =
 
-    `今回イベント候補 (${
+    `今回イベント候補（${
 
       Object.keys(
 
@@ -1611,15 +1611,15 @@ const todayPokemon = {};
 
       ).length
 
-    })`;
+    }）`;
 
   document.getElementById(
 
     "allCandidateTitle"
 
-  ).textContent =
+).textContent =
 
-    `全イベント候補 (${
+    `全イベント候補（${
 
       Object.keys(
 
@@ -1627,7 +1627,7 @@ const todayPokemon = {};
 
       ).length
 
-    })`;
+    }）`;
 
   function createButton(
 
@@ -2219,7 +2219,7 @@ function renderFavorites(){
 
   ).textContent =
 
-    `お気に入り (${favorites.length})`;
+    `お気に入り（${favorites.length}）`
 
   favorites.forEach(name => {
 
