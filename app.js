@@ -825,6 +825,38 @@ createBackup();
 
   renderEvents();
 
+  if(events.length > 0){
+
+    const nextIndex =
+
+      Math.min(index, events.length - 1);
+
+    selectedEventId =
+
+      events[nextIndex].id;
+
+    openEvent(selectedEventId);
+
+  }else{
+
+    selectedEventId = null;
+
+    currentEventId = null;
+
+    localStorage.removeItem(
+
+      "currentEventId"
+
+    );
+
+    document.getElementById(
+
+      "currentEventArea"
+
+    ).innerHTML = "";
+
+  }
+  
 }
 
 document
