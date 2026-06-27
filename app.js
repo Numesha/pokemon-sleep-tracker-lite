@@ -818,6 +818,7 @@ ${
 
     📝 ${event.note}
 
+
   </div>
 
   `
@@ -825,7 +826,48 @@ ${
   : ""
 
 }
-  </div>
+
+<div style="
+
+  display:flex;
+
+  gap:8px;
+
+  margin-top:12px;
+
+">
+
+  <button
+
+    onclick="startEditEvent(${event.id})"
+
+    class="primary"
+
+    style="flex:1;"
+
+  >
+
+    ✏️ 編集
+
+  </button>
+
+  <button
+
+    onclick="deleteCurrentEvent()"
+
+    class="secondary"
+
+    style="flex:1;"
+
+  >
+
+    🗑️ 削除
+
+  </button>
+
+</div>
+
+</div>
 
 `;
 
