@@ -616,7 +616,63 @@ function renderCurrentEventEditor(){
     return;
 
   }
+  const event =
 
+    events.find(
+
+      e => e.id === selectedEventId
+
+    );
+
+  if(!event) return;
+
+  area.innerHTML = `
+
+<div style="
+
+  margin-top:12px;
+
+  padding:12px;
+
+  border:1px solid #ddd;
+
+  border-radius:10px;
+
+  background:#f8f9fa;
+
+">
+
+<b>📝 イベント編集</b>
+
+<br><br>
+
+<input
+
+  id="editEventName"
+
+  value="${event.name}"
+
+>
+
+<input
+
+  id="editEventDate"
+
+  type="date"
+
+  value="${event.date}"
+
+>
+
+<textarea
+
+  id="editEventNote"
+
+>${event.note}</textarea>
+
+</div>
+
+`;
 }
 
 function moveEventUp(index){
