@@ -529,6 +529,8 @@ function startEditEvent(id){
 
   renderEvents();
 
+  openEvent(id);
+
 }
 
 function saveEditEvent(id){
