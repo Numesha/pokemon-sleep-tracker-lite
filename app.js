@@ -589,6 +589,12 @@ function cancelEditEvent(){
 
   renderEvents();
 
+  if(selectedEventId){
+
+    openEvent(selectedEventId);
+
+  }
+
 }
 
 function renderCurrentEventEditor(){
