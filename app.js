@@ -277,23 +277,7 @@ ${
 
 
 
-${
 
-editingEventId === event.id
-
-? `<button disabled>
-
-     📝 編集中
-
-   </button>`
-
-: `<button onclick="startEditEvent(${event.id})">
-
-     編集
-
-   </button>`
-
-}
 
 ${
 
