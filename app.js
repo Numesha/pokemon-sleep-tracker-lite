@@ -605,6 +605,18 @@ function renderCurrentEventEditor(){
 
   area.innerHTML = "";
 
+  if(
+
+    editingEventId !==
+
+    selectedEventId
+
+  ){
+
+    return;
+
+  }
+
 }
 
 function moveEventUp(index){
