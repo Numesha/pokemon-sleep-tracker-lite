@@ -581,6 +581,24 @@ function cancelEditEvent(){
 
 }
 
+function deleteCurrentEvent(){
+
+  if(selectedEventId == null) return;
+
+  const index =
+
+    events.findIndex(
+
+      e => e.id === selectedEventId
+
+    );
+
+  if(index === -1) return;
+
+  deleteEvent(index);
+
+}
+
 function renderCurrentEventEditor(){
 
   const area =
