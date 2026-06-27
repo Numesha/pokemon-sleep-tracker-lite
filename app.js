@@ -173,7 +173,23 @@ div.style.borderRadius = "8px";
 
   >
 
-${currentEventId === event.id ? "🚩 " : ""}${event.name}
+${
+
+currentEventId === event.id
+
+  ? "🚩 "
+
+  : ""
+
+}${
+
+selectedEventId === event.id
+
+  ? "📖 "
+
+  : ""
+
+}${event.name}
 
   </h3>
 
@@ -193,7 +209,7 @@ ${currentEventId === event.id ? "🚩 " : ""}${event.name}
 
 📅 ${event.date}
 
-${selectedEventId === event.id ? " 👁" : ""}
+
 
   </span>
 
