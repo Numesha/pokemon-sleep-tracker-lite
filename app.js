@@ -867,6 +867,8 @@ ${
 
 </div>
 
+<div id="currentEventEditArea"></div>
+
 </div>
 
 `;
