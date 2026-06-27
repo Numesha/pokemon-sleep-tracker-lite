@@ -890,6 +890,8 @@ ${
 `;
 
 currentArea.appendChild(detailArea);
+
+renderCurrentEventEditor();
   
 }
   
