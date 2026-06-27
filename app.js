@@ -670,6 +670,46 @@ function renderCurrentEventEditor(){
 
 >${event.note}</textarea>
 
+<div style="
+
+  display:flex;
+
+  gap:8px;
+
+  margin-top:10px;
+
+">
+
+  <button
+
+    onclick="saveEditEvent(${event.id})"
+
+    class="primary"
+
+    style="flex:1;"
+
+  >
+
+    保存
+
+  </button>
+
+  <button
+
+    onclick="cancelEditEvent()"
+
+    class="secondary"
+
+    style="flex:1;"
+
+  >
+
+    キャンセル
+
+  </button>
+
+</div>
+
 </div>
 
 `;
