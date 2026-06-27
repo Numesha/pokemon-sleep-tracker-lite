@@ -327,7 +327,7 @@ currentEventId !== event.id
 
 ${
 
-editingEventId === event.id
+false
 
 ? `
 
