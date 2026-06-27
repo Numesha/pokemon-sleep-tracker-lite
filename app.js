@@ -301,11 +301,7 @@ currentEventId !== event.id
 
 
 
-<button onclick="deleteEvent(${index})">
 
-  削除
-
-</button>
 
 </div>
 
