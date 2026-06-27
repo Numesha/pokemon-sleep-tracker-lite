@@ -591,7 +591,21 @@ function cancelEditEvent(){
 
 }
 
+function renderCurrentEventEditor(){
 
+  const area =
+
+    document.getElementById(
+
+      "currentEventEditArea"
+
+    );
+
+  if(!area) return;
+
+  area.innerHTML = "";
+
+}
 
 function moveEventUp(index){
 
